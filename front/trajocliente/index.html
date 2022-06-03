@@ -1,0 +1,239 @@
+<style>
+  .container {
+    width: 70%;
+    max-width: 700px;
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 9px;
+  }
+
+  .t {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .none {
+    padding: 0px !important;
+    border: 0px !important;
+  }
+
+  .t td,
+  .t th {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 5px;
+
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .vt_signature {
+    width: 100px;
+    height: 100px;
+  }
+
+  .TdVertical {
+    transform: rotate(-90deg);
+  }
+</style>
+
+<body>
+  <div class="container">
+
+    <table class="t">
+
+      <thead>
+
+        <tr>
+          <td class="none">
+            <table class="t">
+              <tr>
+                <th rowspan="3" colspan="3"> <img
+                    src="https://s3.amazonaws.com/logocompanies/D31E82BC-8C3F-4610-948D-9D0CB7A1A908.png" width="200" />
+                </th>
+                <th colspan="20" style="text-align: center;">PROCESO OPERATIVO</th>
+                <th>Codigo: PO.FR.08</th>
+              </tr>
+              <tr>
+
+                <th colspan="20" rowspan="2" style="text-align: center;">PLANTILLA DE MONITOREO Y CONTROL DE INSECTOS EN
+                  LÁMPARAS DE LUZ ULTRAVIOLETA</th>
+                <th>Version: 1 </th>
+              </tr>
+              <tr>
+                <th>Fecha: 02/01/18</th>
+              </tr>
+
+              <tr>
+                <td colspan="24"><b>Empresa: </b><span data-frm="LocationName"></span></td>
+              </tr>
+              <span style="display: none;" class="fin" data-frm="UpdatedOn"></span>
+              <span style="display: none;" class="inicio" data-frm="CreatedOn"></span>
+              <tr>
+                <td colspan="12"><b>Fecha: </b> <span id="fh"></span></td>
+                <td colspan="12"><b>Horario de control <br>
+                    <hr> Inicio: <span id="horai"></span> Fin: <span id="horaf"></span></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="none">
+
+            <table class="t">
+              <tr>
+                <th rowspan="3">N°</th>
+                <th rowspan="3">ÁREA DE UBICACIÓN</th>
+                <th colspan="2" rowspan="2">Cambio T. Pegante</th>
+                <th colspan="11" style="text-align: center;">CAPTURA DE INSECTOS Y OTRAS PLAGAS</th>
+                <th colspan="7" style="text-align: center;">ESTADO DE LAS LÁMPARAS</th>
+                <th colspan="2" rowspan="3">OBSERVACIONES</th>
+              </tr>
+              <tr>
+                <th rowspan="2" class="TdVertical">Moscas</th>
+                <th rowspan="2" class="TdVertical">Zancudos</th>
+                <th rowspan="2" class="TdVertical">Otros Mosquitos</th>
+                <th rowspan="2" class="TdVertical">Palomillas</th>
+                <th rowspan="2" class="TdVertical">Gorgojos</th>
+                <th rowspan="2" class="TdVertical">Cucarrones</th>
+                <th rowspan="2" class="TdVertical">Mariposas</th>
+                <th rowspan="2" class="TdVertical">Abejas</th>
+                <th rowspan="2" class="TdVertical">Avispas</th>
+                <th rowspan="2" class="TdVertical">Lagartijas</th>
+                <th rowspan="2" class="TdVertical">Otras Plagas</th>
+                <th rowspan="1" colspan="2">Identificador</th>
+                <th rowspan="2" class="TdVertical">Dañada</th>
+                <th rowspan="2" class="TdVertical">Bombillo Malo</th>
+                <th rowspan="2" class="TdVertical">Deteriorada</th>
+                <th rowspan="2" class="TdVertical">Limpia</th>
+                <th rowspan="2" class="TdVertical">Sucia</th>
+              </tr>
+              <tr>
+                <th>SI</th>
+                <th>NO</th>
+                <th>SI</th>
+                <th>NO</th>
+              </tr>
+              <tbody id="lista">
+
+              </tbody>
+
+
+              <tr>
+                <td rowspan="2" colspan="8" data-api="FIRMAtele.BIN"><b>Técnico Aplicador: </b><span
+                    data-api="TECNICO_APLICADOR.BIN"></span></td>
+                <td rowspan="2" colspan="8"><b>N° Carnet: </b> </td>
+                <td rowspan="2" colspan="8" data-api="FIRMAtele.BIN"><b>Visto Bueno Cliente: </b> <span
+                    data-api="VISTO_BUENO_CLIENTE.BIN"></span></td>
+              </tr>
+            </table>
+
+            <table style="display:none;" class="t" data-api="MD_MONITOREO_LAMPARAS" cellspacing="0">
+
+
+
+              <tbody data-container="true" data-template="true">
+
+
+                <tr class="fila">
+                  <td data-col="NUM-ESTACION" style="text-align: center;"></td>
+                  <td data-col="Name" style="text-align: center;"></td>
+                  <td data-col="CAMBIO_PEGANTE" style="text-align: center;"></td>
+                  <td data-col="CAMBIO_PEGANTE" style="text-align: center;"></td>
+                  <td data-col="MOSCAS" style="text-align: center;"></td>
+                  <td data-col="ZANCUDOS" style="text-align: center;"></td>
+                  <td data-col="OTROS_MOSQUITOS" style="text-align: center;"></td>
+                  <td data-col="PALOMILLAS" style="text-align: center;"></td>
+                  <td data-col="GORGOJOS" style="text-align: center;"></td>
+                  <td data-col="CUCARRONES" style="text-align: center;"></td>
+                  <td data-col="MARIPOSAS" style="text-align: center;"></td>
+                  <td data-col="ABEJAS" style="text-align: center;"></td>
+                  <td data-col="AVISPAS" style="text-align: center;"></td>
+                  <td data-col="LAGARTIJAS" style="text-align: center;"></td>
+                  <td data-col="OTRAS_PLAGAS" style="text-align: center;"></td>
+                  <td data-col="IDENTIFICADOR" style="text-align: center;"></td>
+                  <td data-col="IDENTIFICADOR" style="text-align: center;"></td>
+                  <td data-col="ESTADO" style="text-align: center;"></td>
+                  <td colspan="2" data-col="OBS" style="text-align: center;"></td>
+                </tr>
+
+
+              </tbody>
+
+
+
+            </table>
+
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <script type="text/javascript">
+    ucCustomReport.AfterLoad = function () {
+      try {
+
+        $(".fila").each(function (i, ele) {
+
+          var val1 = '';
+          var val2 = '';
+          var val3 = '';
+          var val4 = '';
+          var val5 = '';
+
+          if ($(ele).children()[17].textContent == 'Dañada') {
+            val1 = $(ele).children()[17].textContent;
+          } else if ($(ele).children()[17].textContent == 'Bombillo Malo') {
+            val2 = $(ele).children()[17].textContent;
+          } else if ($(ele).children()[17].textContent == 'Deteriorada') {
+            val3 = $(ele).children()[17].textContent;
+          } else if ($(ele).children()[17].textContent == 'Limpia') {
+            val4 = $(ele).children()[17].textContent;
+          } else if ($(ele).children()[17].textContent == 'Sucia') {
+            val5 = $(ele).children()[17].textContent;
+          }
+
+          var html = ' <tr><td class="center">' + (i + 1) + '</td><td class="center">' + $(ele).children()[1].textContent + '</td><td class="center">' + $(ele).children()[2].textContent.replace('SiSi', 'SI') + '</td><td class="center">' + $(ele).children()[3].textContent + '</td><td class="center">' + $(ele).children()[4].textContent + '</td><td class="center">' + $(ele).children()[5].textContent + '</td><td class="center">' + $(ele).children()[6].textContent + '</td><td class="center">' + $(ele).children()[7].textContent + '</td><td class="center">' + $(ele).children()[8].textContent + '</td><td class="center">' + $(ele).children()[9].textContent + '</td><td class="center">' + $(ele).children()[10].textContent + '</td><td class="center">' + $(ele).children()[11].textContent + '</td><td class="center">' + $(ele).children()[12].textContent + '</td><td class="center">' + $(ele).children()[13].textContent + '</td><td class="center">' + $(ele).children()[14].textContent + '</td><td class="center">' + $(ele).children()[15].textContent.replace('SISI', 'SI') + '</td><td class="center">' + $(ele).children()[16].textContent + '</td><td class="center">' + val1 + '</td><td class="center">' + val2 + '</td><td class="center">' + val3 + '</td><td class="center">' + val4 + '</td><td class="center">' + val5 + '</td><td class="center" colspan="2">' + $(ele).children()[18].textContent + '</td> </tr>';
+
+          $("#lista").append(html);
+
+        })
+
+
+
+        var inicio = $(".inicio").html();
+        var inicio = $(".fin").html();
+
+
+        var array = inicio.split(' ');
+
+        var fecha = array[0] + ' ,' + array[1] + ' ' + array[2];
+        var hora = array[3] + ' ' + array[4];
+        var hora = array[3] + ' ' + array[4];
+
+
+
+        $("#fh").html(fecha)
+        $("#horai").html(hora)
+        $("#horaf").html(hora)
+
+
+      } catch (exc) {
+        app.excManager("ucCustomReport", "AfterLoad", exc);
+      }
+
+    }
+  </script>

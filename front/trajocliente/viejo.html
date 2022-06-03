@@ -1,0 +1,557 @@
+<style>
+  .container {
+    width: 100%;
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 6px;
+  }
+
+  .texto {
+    text-align: center;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  .t {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .none {
+    padding: 0px !important;
+    border: 0px !important;
+  }
+
+  .t td,
+  .t th {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+
+  .salto {
+    page-break-inside: avoid;
+  }
+
+  th,
+  td {
+    padding: 5px;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .vt_signature {
+    width: 80px;
+    height: 80px;
+  }
+</style>
+
+<body>
+  <div class="container">
+
+    <table class="t">
+
+      <thead>
+
+        <tr>
+          <td style="border: 0px; padding: 5px 0;"></td>
+        </tr>
+
+        <tr>
+          <td class="none">
+            <table class="t">
+              <tr>
+                <th rowspan="3" colspan="3">
+                  <img src="https://s3.amazonaws.com/logocompanies/D31E82BC-8C3F-4610-948D-9D0CB7A1A908.png"
+                    width="200" />
+                </th>
+                <th colspan="20" style="text-align: center;">PROCESO OPERATIVO</th>
+                <th>Codigo: PO.FR.09</th>
+              </tr>
+              <tr>
+                <th colspan="20" rowspan="2" style="text-align: center;">
+                  PLANILLA DE MONITOREO Y CONTROL DE ROEDORES SEMANAL EN ESTACIONES DE CEBADO
+                </th>
+                <th>Version: 3 </th>
+              </tr>
+              <tr>
+                <th>Fecha: 01/02/22</th>
+              </tr>
+              <tr>
+                <th colspan="24"><b>Empresa: </b><span data-frm="LocationName"></span></th>
+              </tr>
+              <tr>
+                <th colspan="24"><b>Fecha: </b> Semana: <span data-api="INI_SEM"></span> a <span
+                    data-api="FIN_SEM"></span></th>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+      </thead>
+      <tbody>
+        <tr>
+          <td class="none">
+            <table class="t">
+
+              <tr>
+                <th rowspan="2" class="texto">Numero de Estación</th>
+                <th rowspan="2" colspan="4">Area de ubicación</th>
+                <th colspan="4" class="texto">Lunes</th>
+                <th colspan="4" class="texto">Martes</th>
+                <th colspan="4" class="texto">Miercoles</th>
+                <th colspan="4" class="texto">Jueves</th>
+                <th colspan="4" class="texto">Viernes</th>
+                <th colspan="4" class="texto">Sabado</th>
+                <th rowspan="2" class="texto">Observaciones</th>
+              </tr>
+              <tr>
+                <th>Cambio cebo</th>
+                <th>Consumo</th>
+                <th>Estado del Cebo</th>
+                <th>Estado de la Estación</th>
+                <th>Cambio cebo</th>
+                <th>Consumo</th>
+                <th>Estado del Cebo</th>
+                <th>Estado de la Estación</th>
+                <th>Cambio cebo</th>
+                <th>Consumo</th>
+                <th>Estado del Cebo</th>
+                <th>Estado de la Estación</th>
+                <th>Cambio cebo</th>
+                <th>Consumo</th>
+                <th>Estado del Cebo</th>
+                <th>Estado de la Estación</th>
+                <th>Cambio cebo</th>
+                <th>Consumo</th>
+                <th>Estado del Cebo</th>
+                <th>Estado de la Estación</th>
+                <th>Cambio cebo</th>
+                <th>Consumo</th>
+                <th>Estado del Cebo</th>
+                <th>Estado de la Estación</th>
+              </tr>
+              <tbody id="lista">
+              </tbody>
+
+            </table>
+
+            <table style="display:none;" class="t" data-api="MD_ESTACIONES_CEBADO" cellspacing="0">
+
+              <tbody data-container="true" data-template="true">
+
+                <tr class="fila">
+                  <td data-col="NUM_EST"></td>
+                  <td data-col="Name" style="text-align: center;"></td>
+                  <td data-col="CAMBIO_L.Value"></td>
+                  <td data-col="CONSUMO_L.Value"></td>
+                  <td data-col="ESTADO_CEBO_L.Value"></td>
+                  <td data-col="ESTADO_ESTACION_L.Value"></td>
+                  <td data-col="CAMBIO_M.Value"></td>
+                  <td data-col="CONSUMO_M.Value"></td>
+                  <td data-col="ESTADO_CEBO_M.Value"></td>
+                  <td data-col="ESTADO_ESTACION_M.Value"></td>
+                  <td data-col="CAMBIO_MI.Value"></td>
+                  <td data-col="CONSUMO_MI.Value"></td>
+                  <td data-col="ESTADO_CEBO_MI.Value"></td>
+                  <td data-col="ESTADO_ESTACION_MI.Value"></td>
+                  <td data-col="CAMBIO_J.Value"></td>
+                  <td data-col="CONSUMO_J.Value"></td>
+                  <td data-col="ESTADO_CEBO_J.Value"></td>
+                  <td data-col="ESTADO_ESTACION_J.Value"></td>
+                  <td data-col="CAMBIO_V.Value"></td>
+                  <td data-col="CONSUMO_V.Value"></td>
+                  <td data-col="ESTADO_CEBO_V.Value"></td>
+                  <td data-col="ESTADO_ESTACION_V.Value"></td>
+                  <td data-col="CAMBIO_S.Value"></td>
+                  <td data-col="CONSUMO_S.Value"></td>
+                  <td data-col="ESTADO_CEBO_S.Value"></td>
+                  <td data-col="ESTADO_ESTACION_S.Value"></td>
+                  <td data-col="OBS"></td>
+                </tr>
+
+
+              </tbody>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="none">
+            <table class="t">
+              <tr>
+                <th colspan="30" class="texto">
+                  Convenciones: Cambio cebo S:si N:no para consumo
+                  S:si
+                  N:no Para
+                  estado
+                  del
+                  Cebo N: normal D:deteriorado F:faltante para el estado de la estación L:limpia
+                  S:sucia
+                  DS:desanclada
+                  FS:fuera de sitio DT:deteriorada E:extraviada O:obstruida DÑ:dañada
+                </th>
+              </tr>
+              <tr>
+                <th colspan="30" class="texto">
+                  Resumen de las Condiciones del Cebo y Estado de las
+                  Estaciónes de
+                  Control
+                </th>
+              </tr>
+              <tr>
+                <th colspan="8">N° Estaciónes Monitoreadas: </th>
+                <th colspan="4"><span id="monitoreo"></span></th>
+                <th colspan="16">N° Estaciónes Deterioradas: </th>
+                <th colspan="2"><span id="NumeroDeterioradas"></span></th>
+              </tr>
+              <tr>
+                <th colspan="8">N° Total de Consumos de Cebos: </th>
+                <th colspan="4"><span id="NumeroXSI"></span></th>
+                <th colspan="16">N° Estaciónes Dañadas: </th>
+                <th colspan="2"><span id="NumeroDanadas"></span></th>
+              </tr>
+              <tr>
+                <th colspan="8">N° Total sin actividad: </th>
+                <th colspan="4"><span id="SinActividad"></span></th>
+                <th colspan="16">N° Estaciónes Extraviadas: </th>
+                <th colspan="2"><span id="NumeroExtraviadas"></span></th>
+              </tr>
+              <tr>
+                <th colspan="8">N° Total Deteriorado: </th>
+                <th colspan="4"><span id="NumeroDeteriorado"></span></th>
+                <th colspan="16">N° Estaciónes Obstruidas: </th>
+                <th colspan="2"><span id="NumeroObstruidas"></span></th>
+              </tr>
+              <tr>
+                <th colspan="13" class="texto"><b>Control del Cebo Rodenticida Aplicado:</b></th>
+                <th rowspan="2" colspan="17" data-api="FIRMA_CLIENTE.BIN">
+                  <b>
+                    Técnico Aplicador:
+                  </b><span data-api="TECNICO_APLICADOR.BIN"></span>
+                </th>
+              </tr>
+              <tr>
+                <th class="texto" colspan="4">Nombre Comercial</th>
+                <th class="texto" colspan="4">Principio Activo</th>
+                <th class="texto" colspan="4">Método Uso</th>
+                <th class="texto">Dosis/Estación</th>
+
+
+              </tr>
+              <tbody id="lista1">
+              </tbody>
+
+            </table>
+
+            <table style="display:none;" class="t" data-api="MD_CONTROL_CEBO" cellspacing="0">
+
+              <tbody data-container="true" data-template="true">
+
+                <tr class="fila2">
+                  <td colspan="4" data-col="NOMBRE_COMERCIAL"></td>
+                  <td colspan="4" data-col="PRINC_ACTIVO"></td>
+                  <td colspan="4" data-col="METODO_USO"></td>
+                  <td colspan="3" data-col="DOSIS"></td>
+                  <td colspan="17"><b>N° Carnet: </b> </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      <tbody>
+
+  </div>
+
+  <script type="text/javascript">
+      ucCustomReport.AfterLoad = function () {
+          try {
+              var lunesConsumoSI = 0;
+              var martesConsumoSI = 0;
+              var miercolesConsumoSI = 0;
+              var juevesConsumoSI = 0;
+              var viernesConsumoSI = 0;
+              var sabadoConsumoSI = 0;
+
+              var x = 0;
+
+              var lunesSinActividad = 0;
+              var martesSinActividad = 0;
+              var miercolesSinActividad = 0;
+              var juevesSinActividad = 0;
+              var viernesSinActividad = 0;
+              var sabadoSinActividad = 0;
+
+              var lunesDeteriorado = 0;
+              var martesDeteriorado = 0;
+              var miercolesDeteriorado = 0;
+              var juevesDeteriorado = 0;
+              var viernesDeteriorado = 0;
+              var sabadoDeteriorado = 0;
+
+              var lunesDeterioradas = 0;
+              var martesDeterioradas = 0;
+              var miercolesDeterioradas = 0;
+              var juevesDeterioradas = 0;
+              var viernesDeterioradas = 0;
+              var sabadoDeterioradas = 0;
+
+              var lunesDanadas = 0;
+              var martesDanadas = 0;
+              var miercolesDanadas = 0;
+              var juevesDanadas = 0;
+              var viernesDanadas = 0;
+              var sabadoDanadas = 0;
+
+              var lunesExtraviadas = 0;
+              var martesExtraviadas = 0;
+              var miercolesExtraviadas = 0;
+              var juevesExtraviadas = 0;
+              var viernesExtraviadas = 0;
+              var sabadoExtraviadas = 0;
+
+              var lunesObstruidas = 0;
+              var martesObstruidas = 0;
+              var miercolesObstruidas = 0;
+              var juevesObstruidas = 0;
+              var viernesObstruidas = 0;
+              var sabadoObstruidas = 0;
+
+
+
+              $(".fila").each(function (i, ele) {
+
+
+
+                  if ($(ele).children()[3].textContent.toLowerCase() === "s") {
+                      lunesConsumoSI += 1;
+                  }
+                  if ($(ele).children()[7].textContent.toLowerCase() === "s") {
+                      martesConsumoSI += 1;
+                  }
+                  if ($(ele).children()[11].textContent.toLowerCase() === "s") {
+                      miercolesConsumoSI += 1;
+                  }
+                  if ($(ele).children()[15].textContent.toLowerCase() === "s") {
+                      juevesConsumoSI += 1;
+                  }
+                  if ($(ele).children()[19].textContent.toLowerCase() === "s") {
+                      viernesConsumoSI += 1;
+                  }
+                  if ($(ele).children()[23].textContent.toLowerCase() === "s") {
+                      sabadoConsumoSI += 1;
+                  }
+
+                  if ($(ele).children()[2].textContent.toLowerCase() === "n" || $(ele).children()[3].textContent.toLowerCase() === "n") {
+                      lunesSinActividad += 1;
+                  }
+                  if ($(ele).children()[6].textContent.toLowerCase() === "n" || $(ele).children()[7].textContent.toLowerCase() === "n") {
+                      martesSinActividad += 1;
+                  }
+                  if ($(ele).children()[10].textContent.toLowerCase() === "n" || $(ele).children()[11].textContent.toLowerCase() === "n") {
+                      miercolesSinActividad += 1;
+                  }
+                  if ($(ele).children()[14].textContent.toLowerCase() === "n" || $(ele).children()[15].textContent.toLowerCase() === "n") {
+                      juevesSinActividad += 1;
+                  }
+                  if ($(ele).children()[18].textContent.toLowerCase() === "n" || $(ele).children()[19].textContent.toLowerCase() === "n") {
+                      viernesSinActividad += 1;
+                  }
+                  if ($(ele).children()[22].textContent.toLowerCase() === "n" || $(ele).children()[23].textContent.toLowerCase() === "n") {
+                      sabadoSinActividad += 1;
+                  }
+
+                  if ($(ele).children()[4].textContent.toLowerCase() === "d") {
+                      lunesDeteriorado += 1;
+                  }
+                  if ($(ele).children()[8].textContent.toLowerCase() === "d") {
+                      martesDeteriorado += 1;
+                  }
+                  if ($(ele).children()[12].textContent.toLowerCase() === "d") {
+                      miercolesDeteriorado += 1;
+                  }
+                  if ($(ele).children()[16].textContent.toLowerCase() === "d") {
+                      juevesDeteriorado += 1;i
+                  }
+                  if ($(ele).children()[20].textContent.toLowerCase() === "d") {
+                      viernesDeteriorado += 1;
+                  }
+                  if ($(ele).children()[24].textContent.toLowerCase() === "d") {
+                      sabadoDeteriorado += 1;
+                  }
+
+                  if ($(ele).children()[5].textContent.toLowerCase() === "dt") {
+                      lunesDeterioradas += 1;
+                  }
+                  if ($(ele).children()[9].textContent.toLowerCase() === "dt") {
+                      martesDeterioradas += 1;
+                  }
+                  if ($(ele).children()[13].textContent.toLowerCase() === "dt") {
+                      miercolesDeterioradas += 1;
+                  }
+                  if ($(ele).children()[17].textContent.toLowerCase() === "dt") {
+                      juevesDeterioradas += 1;
+                  }
+                  if ($(ele).children()[21].textContent.toLowerCase() === "dt") {
+                      viernesDeterioradas += 1;
+                  }
+                  if ($(ele).children()[25].textContent.toLowerCase() === "dt") {
+                      sabadoDeterioradas += 1;
+                  }
+
+                  if ($(ele).children()[5].textContent.toLocaleLowerCase() === "dñ") {
+                      lunesDanadas += 1;
+                  }
+                  if ($(ele).children()[9].textContent.toLocaleLowerCase() === "dñ") {
+                      martesDanadas += 1;
+                  }
+                  if ($(ele).children()[13].textContent.toLocaleLowerCase() === "dñ") {
+                      miercolesDanadas += 1;
+                  }
+                  if ($(ele).children()[17].textContent.toLocaleLowerCase() === "dñ") {
+                      juevesDanadas += 1;
+                  }
+                  if ($(ele).children()[21].textContent.toLocaleLowerCase() === "dñ") {
+                      viernesDanads += 1;
+                  }
+                  if ($(ele).children()[25].textContent.toLocaleLowerCase() === "dñ") {
+                      sabadoDanadas += 1;
+                  }
+
+                  if ($(ele).children()[5].textContent.toLocaleLowerCase() === "e") {
+                      lunesExtraviadas += 1;
+                  }
+                  if ($(ele).children()[9].textContent.toLocaleLowerCase() === "e") {
+                      martesExtraviadas += 1;
+                  }
+                  if ($(ele).children()[13].textContent.toLocaleLowerCase() === "e") {
+                      miercolesExtraviadas += 1;
+                  }
+                  if ($(ele).children()[17].textContent.toLocaleLowerCase() === "e") {
+                      jueveExtraviadas += 1;
+                  }
+                  if ($(ele).children()[21].textContent.toLocaleLowerCase() === "e") {
+                      viernesExtraviadas += 1;
+                  }
+                  if ($(ele).children()[25].textContent.toLocaleLowerCase() === "e") {
+                      sabadoExtraviadas += 1;
+                  }
+
+                  if ($(ele).children()[5].textContent.toLocaleLowerCase() === "o") {
+                      lunesObstruidas += 1;
+                  }
+                  if ($(ele).children()[9].textContent.toLocaleLowerCase() === "o") {
+                      martesObstruidas += 1;
+                  }
+                  if ($(ele).children()[13].textContent.toLocaleLowerCase() === "o") {
+                      miercolesObstruidas += 1;
+                  }
+                  if ($(ele).children()[17].textContent.toLocaleLowerCase() === "o") {
+                      juevesObstruidas += 1;
+                  }
+                  if ($(ele).children()[21].textContent.toLocaleLowerCase() === "o") {
+                      viernesObstruidas += 1;
+                  }
+                  if ($(ele).children()[25].textContent.toLocaleLowerCase() === "o") {
+                      sabadoObstruidas += 1;
+                  }
+
+
+
+
+                  console.log(ele)
+
+                  var html = ' <tr class="salto"><td class="center">' +  $(ele).children()[0].textContent +
+                      '</td><td class="center" colspan="4">' + $(ele).children()[1].textContent +
+                      '</td><td class="center">' + $(ele).children()[2].textContent +
+                      '</td><td class="center">' + $(ele).children()[3].textContent +
+                      '</td><td class="center">' + $(ele).children()[4].textContent +
+                      '</td><td class="center">' + $(ele).children()[5].textContent +
+                      '</td><td class="center">' + $(ele).children()[6].textContent +
+                      '</td><td class="center">' + $(ele).children()[7].textContent +
+                      '</td><td class="center">' + $(ele).children()[8].textContent +
+                      '</td><td class="center">' + $(ele).children()[9].textContent +
+                      '</td><td class="center">' + $(ele).children()[10].textContent +
+                      '</td><td class="center">' + $(ele).children()[11].textContent +
+                      '</td><td class="center">' + $(ele).children()[12].textContent +
+                      '</td><td class="center">' + $(ele).children()[13].textContent +
+                      '</td><td class="center">' + $(ele).children()[14].textContent +
+                      '</td><td class="center">' + $(ele).children()[15].textContent +
+                      '</td><td class="center">' + $(ele).children()[16].textContent +
+                      '</td><td class="center">' + $(ele).children()[17].textContent +
+                      '</td><td class="center">' + $(ele).children()[18].textContent +
+                      '</td><td class="center">' + $(ele).children()[19].textContent +
+                      '</td><td class="center">' + $(ele).children()[20].textContent +
+                      '</td><td class="center">' + $(ele).children()[21].textContent +
+                      '</td><td class="center">' + $(ele).children()[22].textContent +
+                      '</td><td class="center">' + $(ele).children()[23].textContent +
+                      '</td><td class="center">' + $(ele).children()[24].textContent +
+                      '</td><td class="center">' + $(ele).children()[25].textContent +
+                      '</td><td class="center" colspan="4">' + $(ele).children()[26].textContent +
+                      '</td> </tr>';
+
+                  $("#lista").append(html);
+                  x += 1;
+
+
+              });
+
+              var totalSI = lunesConsumoSI + martesConsumoSI + miercolesConsumoSI + juevesConsumoSI + viernesConsumoSI + sabadoConsumoSI;
+
+              var totalEstacion = lunesSinActividad + martesSinActividad + miercolesSinActividad + juevesSinActividad + viernesSinActividad + sabadoSinActividad;
+
+              var totalDeteriorado = lunesDeteriorado + martesDeteriorado + miercolesDeteriorado + juevesDeteriorado + viernesDeteriorado + sabadoDeteriorado;
+
+              var totalDeterioradas = lunesDeterioradas + martesDeterioradas + miercolesDeterioradas + juevesDeterioradas + viernesDeterioradas + sabadoDeterioradas;
+
+              var totalDanadas = lunesDanadas + martesDanadas + miercolesDanadas + juevesDanadas + viernesDanadas + sabadoDanadas;
+
+              var totalExtraviadas = lunesExtraviadas + martesExtraviadas + miercolesExtraviadas + juevesExtraviadas + viernesExtraviadas + sabadoExtraviadas;
+
+              var totalObstruidas = lunesObstruidas + martesObstruidas + miercolesObstruidas + juevesObstruidas + viernesObstruidas + sabadoObstruidas;
+
+              $("#monitoreo").html(x)
+              $("#NumeroXSI").html(totalSI);
+              $("#SinActividad").html(totalEstacion);
+              $("#NumeroDeteriorado").html(totalDeteriorado);
+
+              $("#NumeroDeterioradas").html(totalDeterioradas);
+
+              $("#NumeroDanadas").html(totalDanadas);
+              $("#NumeroExtraviadas").html(totalExtraviadas);
+              $("#NumeroObstruidas").html(totalObstruidas);
+
+
+
+              $(".fila2").each(function (x, elem) {
+
+                  console.log(elem)
+
+
+                  var html = ' <tr><td class="center" colspan="4">' + $(elem).children()[0].textContent +
+                      '</td><td class="center" colspan="4">' + $(elem).children()[1].textContent +
+                      '</td><td class="center" colspan="4">' + $(elem).children()[2].textContent +
+                      '</td><td class="center" colspan="4">' + $(elem).children()[3].textContent +
+                      '</td><td colspan="17">' + $(elem).children()[4].textContent +
+                      '</td> </tr>';
+
+
+                  $("#lista1").append(html);
+
+              });
+
+
+          } catch (exc) {
+              app.excManager("ucCustomReport", "AfterLoad", exc);
+          }
+
+      }
+  </script>
+</body>

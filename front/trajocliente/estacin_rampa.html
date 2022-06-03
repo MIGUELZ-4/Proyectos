@@ -1,0 +1,546 @@
+<style>
+    .red {
+        font-size: 20px;
+        color: red;
+        font-weight:bold;
+    }
+
+    .corners {
+        border-radius: 25px;
+        border: 2px solid #000000;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .auto-style1 {
+        width: 206px;
+    }
+
+    .auto-style2 {
+        width: 487px;
+    }
+
+    .auto-style3 {
+        width: 65px;
+    }
+
+
+    .table {
+        border-collapse: separate;
+        border: solid black 1px;
+        border-radius: 6px;
+    }
+
+        .table td, th {
+            border-left: solid black 1px;
+            border-top: solid black 1px;
+        }
+
+        .table th {
+            background-color: #adddf6;
+            border-top: none;
+            text-align:center;
+        }
+
+        .table td:first-child, th:first-child {
+            border-left: none;
+        }
+
+    .center {
+        text-align: center;
+    }
+
+    .auto-style4 {
+        text-align: center;
+        height: 22px;
+    }
+
+    .auto-style5 {
+        height: 22px;
+    }
+
+    .tableant tr {
+        height: 45px;
+    }
+
+    .justificado{
+        margin:3px;
+        padding:3px;
+        text-align:justify;
+    }
+
+    .right{
+        text-align:right;
+    }
+
+    .auto-style6 {
+        height: 24px;
+    }
+
+</style>
+
+<script type="text/javascript">
+    /*------------------------------------------------------------------------------------------------------------------
+     - First remove figure elements containing empty images
+     - Pause javascript execution to allow all images to completely load
+     - Insert each image width and height in ps
+     -----------------------------------------------------------------------------------------------------------------*/
+    ucCustomReport.AfterLoad = function () {
+        try {
+
+            var datapi = $('.dataapi');
+            $.each(datapi, function (i, ele) {
+                var class__ = $(this).attr('class').replace('dataapi ', "");
+                //console.log("--->", class__);
+
+                switch ($('.' + class__).html()) {
+                    case "SI":
+                        $('#' + class__ + "_SI").html('X');
+                        break;
+                    case "NO":
+                        $('#' + class__ + "_NO").html('X');
+                        break;
+                    case "NA":
+                        $('#' + class__ + "_NA").html('X');
+                        break;
+                }
+
+
+            });
+
+            var trs = $('#reportvt_').find(".row-vt");
+
+            //console.log("trrs-->",trs.length);
+            var suma = 0;
+            $.each(trs, function (i, ele) {
+                //console.log("-->", i);
+
+                suma = suma + $(this).height();
+
+                //console.log("suma",suma);
+
+                if (suma >= 1300) {
+                    suma = 0;
+                   // //console.log("suma xxx", suma);
+                    $(this).append('<p style="page-break-after: always;"></p>');
+                }
+            });
+
+            var tds = $('#reportvt_').find(".row_insumo");
+            //console.log("tds-->", tds.length);
+
+            $.each(tds, function (i, ele) {
+                var tipo = $(this).find('.dosificacion').html();
+                console.log(i, tipo);
+
+               $(this).find('.' + tipo).css('display','block');
+
+            });
+
+        }
+        catch (exc) {
+            app.excManager("ucCustomReport", "AfterLoad", exc);
+        }
+
+    } // end ucCustom function
+
+
+
+</script>
+
+<div style="width: 1000px; margin: 0px auto; /* center */ padding: 0px; font-size: 10px;">
+    <div style="text-align: left; vertical-align: top; padding-top: 10px; font-size: 10px;">
+        <table style="width: 100%;">
+            <thead>
+                <tr>
+                    <td>
+                        <table style="width: 100%;margin-top:10px;">
+                            <tr class="row-vt">
+                                <td style="width: 50%; text-align: left;">
+                                    <img src="https://s3.amazonaws.com/logocompanies/D31E82BC-8C3F-4610-948D-9D0CB7A1A908.png" width="400" />
+                                    <center>
+                                   <b><strong>NIT- 901-123-411-0</strong><br />
+                                  Carrera 23C No. 9B - 55 PBX: 375 0607 - Cel.: 318 377 62 65<br />
+                                            www.thepestcontrolsas.com - info@thepestcontrolsas.com<br />
+                                            Cali -Colombia
+ 
+                                        </b>
+                                    </center>
+                                </td>
+                                <td style="width: 30%; text-align: right; vertical-align: top;">
+                                    <img src="https://s3.amazonaws.com/formsResources/sgs.jpg" /><br />
+                           
+                                    <span style="color: cadetblue;">       </span>
+                                    <table style="font-size: 12px; width: 100%; font-weight: bold;">
+                                        <tr class="row-vt">
+                                            <td>
+                                                <img src="https://s3.amazonaws.com/formsResources/mapa.png" width="26" /></td>
+                                            <td style="text-align:left;">Control Integrdo de Plagas</td>
+                                        </tr>
+                                        <tr class="row-vt">
+                                            <td>
+                                                <img src="https://s3.amazonaws.com/formsResources/mapa.png" width="26" /></td>
+                                            <td style="text-align:left;">Venta de Insumos para Control de Plagas</td>
+                                        </tr>
+                                        <tr class="row-vt">
+                                            <td>
+                                                <img src="https://s3.amazonaws.com/formsResources/mapa.png" width="26" /></td>
+                                            <td style="text-align:left;">Implementación de Programa B..P.M.</td>
+                                        </tr>
+                                    </table>
+
+                                </td>
+                                <td>
+                                    <center style="margin:10px;">
+                                        <h3>ACTA DE VISITA DIGITAL</h3>
+                                        <div class="corners">
+                                            <span class="red">No.<span data-frm="Consecutive" class="red"></span></span>
+                                        </div>
+                                    </center>
+
+                                </td>
+                            </tr>
+                            <tr >
+                                <td colspan="3">
+                                    <table class="table" style="width: 100%;">
+                                        <tr class="row-vt">
+                                            <td class="auto-style1">RAZON SOCIAL CLIENTE: </td>
+                                            <td data-frm="LocationName" class="auto-style2"></td>
+                                            <td class="auto-style3">FECHA: </td>
+                                            <td data-frm="CreatedOn"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="auto-style6">CIUDAD: 
+                                            </td>
+                                            <td data-frm="LocationCity" class="auto-style6"></td>
+                                            <td class="auto-style6">DIRECCIÓN:
+                                            </td>
+                                            <td data-frm="LocationAddress" colspan="2" class="auto-style6"></td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2">TÉCNICOS:</td>
+                                            <td data-api="tecnico1" colspan="3"></td>
+                                        </tr>
+                                        <tr>
+                                            <td data-api="tecnico1" colspan="3"></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </td>
+                </tr>
+            </thead>
+            <tbody id="reportvt_">
+                <tr>
+                    <td>
+                        <table class="table" style="width: 100%;">
+                            <thead>
+                                <tr class="row-vt">
+                                    <th colspan="2" style="width: 50%;">PERSONAS ENTREVISTADAS
+                                    </th>
+                                    <th colspan="2">HORARIO
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="row-vt" >
+                                    <td colspan="2">1. <span data-api="ENTREVISTADO1"></span>
+                                    </td>
+                                    <td rowspan="2" style="vertical-align:middle;">Hora Inicio:<span data-api="HORA_INICIO"></span>
+                                    </td>
+                                    <td rowspan="2" style="vertical-align:middle;">Hora Fin:<span data-api="HORA_SALIDA"></span>
+                                    </td>
+                                </tr>
+                                <tr class="row-vt">
+                                    <td colspan="2">2. <span data-api="ENTREVISTADO2"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table style="width: 100%;" border="1" cellspacing="0" data-api="MD_SERVICIOS" class="table">
+                            <thead>
+                                <tr style="text-align: center;">
+                                    <th>SERVICIO REALIZADO</th>
+                                    <th>PRODUCTO</th>
+                                    <th>INGREDIENTE ACTIVO</th>
+                                    <th>DOSIFICACION 1</th>
+                                    <th>DOSIFICACION</th>                                   
+                                    <th>No. REGISTRO</th>
+                                    <th>LOTE</th>
+                                    <th>VECIMIENTO</th>                                    
+                                </tr>
+                            </thead>
+                            <tbody data-container="true" data-template="true" style="height:400px;">
+                                <tr class="row-vt">
+                                    <td data-col="SERVICIO"></td>
+                                    <td data-col="INSUMO" class="justificado"></td>
+                                    <td data-col="INSUMO.INGREDIENTE" class="justificado"></td>
+                                    <td class="row_insumo">
+                                        <div class="row_number dosificacion" data-col="DOSIFICACION" style="display:none;"></div>
+                                        <div class="row_number MANTENIMIENTO" data-col="INSUMO.MANTENIMIENTO" style="display:none;"></div>
+                                        <div class="row_number ATAQUE" data-col="INSUMO.ATAQUE" style="display:none;"></div>
+                                        <div class="row_number TERMO" data-col="INSUMO.TERMO" style="display:none;"></div>
+                                    </td>
+                                    <td data-col="CANTIDAD" class="justificado"></td>
+                                    <td data-col="INSUMO.REGISTRO" class="justificado"></td>
+                                    <td data-col="INSUMO.LOTE" class="justificado"></td>
+                                    <td data-col="INSUMO.VENCIMIENTO" class="justificado"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table style="width: 100%;" border="1" cellspacing="0" data-api="MD_AREAS_VISITADAS" class="table">
+                            <thead>
+                                <tr style="text-align: center;">
+                                    <th class="center">AREA</th>
+                                    <th class="center">HALLAZGO</th>
+                                </tr>
+                            </thead>
+                            <tbody data-container="true" data-template="true" style="height:400px;">
+                                <tr class="row-vt">
+                                    <td data-col="AREA"></td>
+                                    <td data-col="HALLAZGOS_AREAS" class="justificado"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr >
+                    <td>
+                        <table style="width: 100%">
+                            <tr class="row-vt">
+                                <td style="width: 49.5%; vertical-align: top;">
+                                    <table style="width: 100%;" border="1" cellspacing="0" class="table">
+                                        <thead>
+                                            <tr style="text-align: center;">
+                                                <th class="auto-style4"></th>
+                                                <th class="auto-style4">LISTA DE CHEQUEO PRELIMINAR</th>
+                                                <th class="auto-style5">SI</th>
+                                                <th class="auto-style5">NO</th>
+                                                <th class="auto-style5">NA</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="tableant" data-container="true" data-template="true">
+                                            <tr class="row-vt">
+                                                <td>1. 
+                                                    <span style="display: none;" class="dataapi BUEN_ESTADO" data-api="BUEN_ESTADO" data-properties='{"align":"none","showlabel": "true", "defwith": "20px"}'></span>
+
+                                                </td>
+                                                <td data-api="BUEN_ESTADO.lab"></td>
+                                                <td class="center" id="BUEN_ESTADO_SI"></td>
+                                                <td class="center" id="BUEN_ESTADO_NO"></td>
+                                                <td class="center" id="BUEN_ESTADO_NA"></td>
+                                            </tr>
+                                            <tr class="row-vt">
+                                                <td>2. <span style="display: none;" class="dataapi TIEMPO_ADECUADO" data-api="TIEMPO_ADECUADO" data-properties='{"align":"none","showlabel": "true", "defwith": "20px"}'></span></td>
+                                                <td data-api="TIEMPO_ADECUADO.lab"></td>
+                                                <td class="center" id="TIEMPO_ADECUADO_SI"></td>
+                                                <td class="center" id="TIEMPO_ADECUADO_NO"></td>
+                                                <td class="center" id="TIEMPO_ADECUADO_NA"></td>
+                                            </tr>
+                                            <tr class="row-vt">
+                                                <td>3. <span style="display: none;" class="dataapi PERIMETRO_INFLUENCIA_PLAGAS" data-api="PERIMETRO_INFLUENCIA_PLAGAS" data-properties='{"align":"none","showlabel": "true", "defwith": "20px"}'></span></td>
+                                                <td data-api="PERIMETRO_INFLUENCIA_PLAGAS.lab"></td>
+                                                <td class="center" id="PERIMETRO_INFLUENCIA_PLAGAS_SI"></td>
+                                                <td class="center" id="PERIMETRO_INFLUENCIA_PLAGAS_NO"></td>
+                                                <td class="center" id="PERIMETRO_INFLUENCIA_PLAGAS_NA"></td>
+                                            </tr>
+                                            <tr class="row-vt">
+                                                <td>4. <span style="display: none;" class="dataapi SENAL_DE_PLAGAS" data-api="SENAL_DE_PLAGAS" data-properties='{"align":"none","showlabel": "true", "defwith": "20px"}'></span></td>
+                                                <td data-api="SENAL_DE_PLAGAS.lab"></td>
+                                                <td class="center" id="SENAL_DE_PLAGAS_SI"></td>
+                                                <td class="center" id="SENAL_DE_PLAGAS_NO"></td>
+                                                <td class="center" id="SENAL_DE_PLAGAS_NA"></td>
+                                            </tr>
+
+                                            <tr class="row-vt">
+                                                <td>5. <span style="display: none;" class="dataapi RESUIDUOS_ATRAEN_PLAGAS" data-api="RESUIDUOS_ATRAEN_PLAGAS" data-properties='{"align":"none","showlabel": "true", "defwith": "20px"}'></span></td>
+                                                <td data-api="RESUIDUOS_ATRAEN_PLAGAS.lab"></td>
+                                                <td class="center" id="RESUIDUOS_ATRAEN_PLAGAS_SI"></td>
+                                                <td class="center" id="RESUIDUOS_ATRAEN_PLAGAS_NO"></td>
+                                                <td class="center" id="RESUIDUOS_ATRAEN_PLAGAS_NA"></td>
+                                            </tr>
+                                            <tr class="row-vt">
+                                                <td>6. <span style="display: none;" class="dataapi RECIPIENTES_ADECUADOS" data-api="RECIPIENTES_ADECUADOS" data-properties='{"align":"none","showlabel": "true", "defwith": "20px"}'></span></td>
+                                                <td data-api="RECIPIENTES_ADECUADOS.lab"></td>
+                                                <td class="center" id="RECIPIENTES_ADECUADOS_SI"></td>
+                                                <td class="center" id="RECIPIENTES_ADECUADOS_NO"></td>
+                                                <td class="center" id="RECIPIENTES_ADECUADOS_NA"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td></td>
+                                <td style="width: 49.5%; vertical-align: top">
+                                    <table style="width: 100%;" border="1" cellspacing="0" class="table">
+                                        <thead>
+                                            <tr style="text-align: center;">
+                                                <th class="center"></th>
+                                                <th class="center">LISTA DE CHEQUEO PRELIMINAR</th>
+                                                <th>SI</th>
+                                                <th>NO</th>
+                                                <th>NA</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="tableant" data-container="true" data-template="true">
+                                            <tr class="row-vt">
+                                                <td>7. 
+                                                    <span style="display: none;" class="dataapi RESIDUOS_FUERA_RECIPIENTES" data-api="RESIDUOS_FUERA_RECIPIENTES" data-properties='{"align":"none","showlabel": "true", "defwith": "20px"}'></span>
+
+                                                </td>
+                                                <td data-api="RESIDUOS_FUERA_RECIPIENTES.lab"></td>
+                                                <td class="center" id="RESIDUOS_FUERA_RECIPIENTES_SI"></td>
+                                                <td class="center" id="RESIDUOS_FUERA_RECIPIENTES_NO"></td>
+                                                <td class="center" id="RESIDUOS_FUERA_RECIPIENTES_NA"></td>
+                                            </tr>
+                                            <tr class="row-vt">
+                                                <td>8. <span style="display: none;" class="dataapi PERCIBEN_MALOS_OLORES" data-api="PERCIBEN_MALOS_OLORES" data-properties='{"align":"none","showlabel": "true", "defwith": "20px"}'></span></td>
+                                                <td data-api="PERCIBEN_MALOS_OLORES.lab"></td>
+                                                <td class="center" id="PERCIBEN_MALOS_OLORES_SI"></td>
+                                                <td class="center" id="PERCIBEN_MALOS_OLORES_NO"></td>
+                                                <td class="center" id="PERCIBEN_MALOS_OLORES_NA"></td>
+                                            </tr>
+                                            <tr class="row-vt">
+                                                <td>9. <span style="display: none;" class="dataapi HUMEDADES" data-api="HUMEDADES" data-properties='{"align":"none","showlabel": "true", "defwith": "20px"}'></span></td>
+                                                <td data-api="HUMEDADES.lab"></td>
+                                                <td class="center" id="HUMEDADES_SI"></td>
+                                                <td class="center" id="HUMEDADES_NO"></td>
+                                                <td class="center" id="HUMEDADES_NA"></td>
+                                            </tr>
+                                            <tr class="row-vt">
+                                                <td>10. <span style="display: none;" class="dataapi ALMACENAMIENTO_DISTANCIADO" data-api="ALMACENAMIENTO_DISTANCIADO" data-properties='{"align":"none","showlabel": "true", "defwith": "20px"}'></span></td>
+                                                <td data-api="ALMACENAMIENTO_DISTANCIADO.lab"></td>
+                                                <td class="center" id="ALMACENAMIENTO_DISTANCIADO_SI"></td>
+                                                <td class="center" id="ALMACENAMIENTO_DISTANCIADO_NO"></td>
+                                                <td class="center" id="ALMACENAMIENTO_DISTANCIADO_NA"></td>
+                                            </tr>
+                                            <tr class="row-vt">
+                                                <td>11. <span style="display: none;" class="dataapi ACUMULACION_MATERIA_DESUSO" data-api="ACUMULACION_MATERIA_DESUSO" data-properties='{"align":"none","showlabel": "true", "defwith": "20px"}'></span></td>
+                                                <td data-api="ACUMULACION_MATERIA_DESUSO.lab"></td>
+                                                <td class="center" id="ACUMULACION_MATERIA_DESUSO_SI"></td>
+                                                <td class="center" id="ACUMULACION_MATERIA_DESUSO_NO"></td>
+                                                <td class="center" id="ACUMULACION_MATERIA_DESUSO_NA"></td>
+                                            </tr>
+                                            <tr class="row-vt">
+                                                <td>12. <span style="display: none;" class="dataapi AREA_EXCLUSIVA_AVERIAS" data-api="AREA_EXCLUSIVA_AVERIAS" data-properties='{"align":"none","showlabel": "true", "defwith": "20px"}'></span></td>
+                                                <td data-api="AREA_EXCLUSIVA_AVERIAS.lab"></td>
+                                                <td class="center" id="AREA_EXCLUSIVA_AVERIAS_SI"></td>
+                                                <td class="center" id="AREA_EXCLUSIVA_AVERIAS_NO"></td>
+                                                <td class="center" id="AREA_EXCLUSIVA_AVERIAS_NA"></td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                          <table style="width: 100%;" border="1" cellspacing="0" data-api="MD_OBS_RECO" class="table">
+                            <thead>
+                                <tr style="text-align: center;">
+                                    <th class="center" style="width: 50%;">OBSERVACIONES</th>
+                                    <th class="center">RECOMENDACIONES</th>
+                                </tr>
+                            </thead>
+                            <tbody data-container="true" data-template="true" style="height:400px;">
+                                <tr class="row-vt">
+                                    <td data-col="OBS" class="justificado"></td>
+                                    <td data-col="RECO" class="justificado"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                          <table style="width: 100%;" border="1" cellspacing="0" data-api="MD_OBS_RECO" class="table">
+                            <thead>
+                                <tr style="text-align: center;">
+                                    <th class="center" style="width: 50%;">
+                                        <center>
+                                            <table style="vertical-align: bottom;">
+                                <tr class="row-vt">
+                                    <td colspan="2" style="border-bottom: 1px solid  #5D97CD;">
+                                        <div style="width: 250px; height: 60px" data-api="FIRM_TEC.BIN">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="row-vt">
+                                    <td>
+                                        <table>
+                                            <tr class="row-vt">
+                                                <td text-align: right;" style="width: 150px;font-size: 12px;color: #5D97CD;">Firma Técnico&nbsp;
+                                                </td>
+                                                <td data-api="FIRM_TEC.SIG" style="font-size: 13px; font-weight: bold;"></td>
+
+                                            </tr>
+
+
+                                        </table>
+
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+                                        </center>
+
+                                    </th>
+                                    <th class="center">
+
+                                      <center>
+                                            <table style="vertical-align: bottom;">
+                                <tr class="row-vt">
+                                    <td colspan="2" style="border-bottom: 1px solid  #5D97CD;">
+                                        <div style="width: 250px; height: 60px" data-api="FIRMA_CLIENTE.BIN">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="row-vt">
+                                    <td>
+                                        <table>
+                                            <tr class="row-vt">
+                                                <td text-align: right;" style="width: 150px;font-size: 12px;color: #5D97CD;">Firma Vo. Bo. Cliente :&nbsp;
+                                                </td>
+                                                <td data-api="FIRMA_CLIENTE.SIG" style="font-size: 13px; font-weight: bold;"></td>
+
+                                            </tr>
+
+
+                                        </table>
+
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+                                      </center>
+
+
+
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

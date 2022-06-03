@@ -1,0 +1,199 @@
+<style>
+  .k-grid.k-grid-fix-locked-columns .k-grid-content-locked,
+  .k-grid[fix-locked-columns] .k-grid-content-locked {
+    overflow: visible;
+    z-index: 1000;
+  }
+
+  .k-grid.k-grid-fix-locked-columns .k-grid-content-locked .k-grouping-row,
+  .k-grid[fix-locked-columns] .k-grid-content-locked .k-grouping-row {
+    white-space: nowrap;
+  }
+
+  .k-reset {
+    color: #ff0000;
+  }
+</style>
+<script>
+
+  function LoadMyCustoms(response, lan, filters) {
+    try {
+
+      var data_fields_keys = [];
+
+      var dataReporte = [];
+
+      console.log("data general", response);
+      var columns = [];
+
+      var rowtemplate = '';
+      var jj = 1;
+      //organizacion de los fields para diferenciarlos
+
+
+      // var listData = [];
+      // response.forEach((item) => {
+      //   item.data.forEach((dato) => {
+      //     listData.push(dato);
+      //   });
+      // });
+      // const sortedData = listData.sort((a, b) => b.act_fecha - a.act_fecha)
+
+
+      // $.each(response[0].columns, function (j, col) {
+      //   col["title"] = col.lab;
+      //   col["width"] = 200;
+      //   col["field"] = col.field
+      //   columns.push(col);
+      // });
+
+
+
+      columns.push({
+        "lab": new Date().toLocaleDateString(),
+        "field": "date",
+        "title": new Date().toLocaleDateString(),
+        "width": 200
+      });
+      columns.push({
+        "lab": "",
+        "field": "name",
+        "title": "",
+        "width": 200
+      });
+
+
+      for (var i = 0; i < response.length; i++) {
+        var listadoLinea1 = [];
+        var listadoLinea2 = [];
+        response[i]["id"] = i;
+        response[i]["type"] = response[i].name;
+        dataReporte.push(response[i]);
+        $.each(response[i].data, function (j, col) {
+          let dtFound = columns.filter((clm) => clm.title === col.loc_name);
+          if (dtFound.length === 0) {
+            let colAux = {
+              title: col.loc_name,
+              width: 200,
+              field: col.loc_name
+            };
+            columns.push(colAux);
+          }
+          if (response[i].name === "DV Documentación y Estado del Vehículo") {
+            console.log("DATA [${i}][${j}] - ", col);
+            let dtX1 = {};
+            dtX1['id'] = j;
+            dtX1['type'] = response[i].name;
+            dtX1['name'] = col.md_documentacion_ev_name || col.act_com_recomend;
+            dtX1[response[i].name] = col.md_documentacion_ev_name || col.act_com_recomend;
+            dtX1[col.loc_name] = col.md_documentacion_ev_cantidad_real || '0';
+            dataReporte.push(dtX1);
+          } else if (response[i].name === "HT Disponibilidad de Herramientas de Trabajos (equipamiento)") {
+            let dtX1 = {};
+            dtX1['id'] = j;
+            dtX1['type'] = response[i].name;
+            dtX1['name'] = col.md_disponibilidad_ht_name || col.md_disponibilidad_ht_type;
+            dtX1[response[i].name] = col.md_documentacion_ev_name || col.act_com_recomend;
+            dtX1[col.loc_name] = col.md_disponibilidad_ht_cantidad_real || '0';
+            dataReporte.push(dtX1);
+          } else if (response[i].name === "OTRAS HERRAMIENTAS") {
+            let dtX1 = {};
+            dtX1['id'] = j;
+            dtX1['type'] = response[i].name;
+            dtX1['name'] = col.md_otras_herramientas_name || col.md_otras_herramientas_type;
+            dtX1[response[i].name] = col.md_documentacion_ev_name || col.act_com_recomend;
+            dtX1[col.loc_name] = col.md_otras_herramientas_cantidad_real || '0';
+            dataReporte.push(dtX1);
+          } else if (response[i].name === "SV Equipamiento de Seguridad del Vehículo") {
+            let dtX1 = {};
+            dtX1['id'] = j;
+            dtX1['type'] = response[i].name;
+            dtX1['name'] = col.md_equipamiento_sv_name || col.md_equipamiento_sv_type;
+            dtX1[response[i].name] = col.md_equipamiento_sv_name || col.md_elementos_es_type;
+            dtX1[col.loc_name] = col.md_equipamiento_sv_cantidad_real || '0';
+            dataReporte.push(dtX1);
+          } else if (response[i].name === "ES Elementos de Seguridad") {
+            let dtX1 = {};
+            dtX1['id'] = j;
+            dtX1['type'] = response[i].name;
+            dtX1['name'] = col.md_elementos_es_name || col.md_elementos_es_type;
+            dtX1[response[i].name] = col.md_equipamiento_sv_name || col.md_elementos_es_type;
+            dtX1[col.loc_name] = col.md_elementos_es_cantidad_real || '0';
+            dataReporte.push(dtX1);
+          }
+        });
+      }
+
+      // columns.push({
+      //   "lab": "MD",
+      //   "field": "type",
+      //   "title": "MD",
+      //   "width": 0
+      // });
+
+      // for (var i = 0; i < response.length; i++) {
+      //   $.each(response[i].data, function (j, dat) {
+      //     dat["id"] = jj;
+      //     dat[dat.loc_name] = dat.md_elementos_es_cantidad_actual;
+      //     jj++; 
+      //     dat["type"] = response[i].name;
+      //     dataReporte.push(dat);
+      //   });
+      // }
+
+      $('#btnExportPDF').hide();
+      $('#reports_grid').hide();
+      $('.grid_data').remove();
+
+
+      $("#reports_Container").append('<div style="width:100%;" class="grid_data" id="grid_data"></div>');
+
+      $("#grid_data").kendoGrid({
+        toolbar: ["excel"],
+        excel: {
+          fileName: "data.xlsx",
+          proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
+          filterable: true
+        },
+        dataBound: function (e) {
+
+        },
+        columns: columns,
+        dataSource: {
+          data: dataReporte,
+          schema: {
+            model: { id: "id" }
+          },
+          group: [
+            { field: "type", aggregates: [{ field: "id", aggregate: "count" }] },
+          ],
+          groupable: true
+        },
+        groupable: true
+      });
+
+
+      console.log('columns', columns);
+      console.log('dataReporte', dataReporte);
+
+    } catch (exc) {
+      console.log("ucmycustoms_report", "ppal", exc);
+    }
+
+  }
+
+  app.AfterLoadMyCustom = function (response, lan, filters,) {
+    try {
+      return LoadMyCustoms(response, lan, filters);
+
+    } catch (exc) {
+      app.excManager("ucmycustoms_report", "AfterLoad", exc);
+    }
+  }
+
+
+
+  // columns.push(Response[0].data[0].act_fecha)
+
+
+</script>

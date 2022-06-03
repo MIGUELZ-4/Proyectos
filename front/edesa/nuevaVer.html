@@ -1,0 +1,117 @@
+<style>
+  .k-grid.k-grid-fix-locked-columns .k-grid-content-locked, 
+  .k-grid[fix-locked-columns] .k-grid-content-locked {
+    overflow: visible;
+    z-index: 1000;
+  }
+
+  .k-grid.k-grid-fix-locked-columns .k-grid-content-locked .k-grouping-row,
+  .k-grid[fix-locked-columns] .k-grid-content-locked .k-grouping-row {
+    white-space: nowrap;
+  }
+  .k-reset{
+    color:#ff0000;
+  }
+</style>
+<script>
+
+  function LoadMyCustoms(response, lan, filters) {
+      try {
+
+          var data_fields_keys = [];
+
+          var dataReporte = [];
+
+          console.log("data general", response);
+          var columns = [];
+
+          var rowtemplate = '';
+          var jj = 1;
+          //organizacion de los fields para diferenciarlos
+          
+          
+          var listData = [];
+          response.forEach((item) => {
+            item.data.forEach((dato) => {
+                listData.push(dato);
+            });
+          });
+          const sortedData = listData.sort((a, b) => b.act_fecha - a.act_fecha)
+
+
+          for (var i = 0; i < response.length; i++) {
+              $.each(response[i].data, function (j, dat) {
+                  dat["id"] = jj;
+                  jj++;
+                  dat["type"] = response[i].name;
+                  dataReporte.push(dat);
+              });
+          }
+          
+          $.each(response[0].columns, function (j, col) {
+              col["title"] = col.lab;
+              col["width"] = 200;
+              col["field"] = col.field
+              columns.push(col);
+          });
+
+          columns.push({
+              "lab": "MD",
+              "field": "type",
+              "title": "MD",
+              "width": 200
+          })
+          console.log("data columns", columns);
+
+          $('#btnExportPDF').hide();
+          $('#reports_grid').hide();
+          $('.grid_data').remove();
+
+
+          $("#reports_Container").append('<div style="width:100%;" class="grid_data" id="grid_data"></div>');
+
+          $("#grid_data").kendoGrid({
+              toolbar: ["excel"],
+              excel: {
+                  fileName: "data.xlsx",
+                  proxyURL: "https://demos.telerik.com/kendo-ui/service/export",
+                  filterable: true
+              },
+              dataBound: function (e) {
+                 
+              },
+              columns: columns,
+              dataSource: {
+                  data: dataReporte,
+                  schema: {
+                      model: { id: "id" }
+                  },
+                  group: [
+                      { field: "type", aggregates: [{ field: "id", aggregate: "count" }] },                        
+                  ],
+                  groupable: true
+              },
+              groupable: true
+          });
+
+
+          console.log(columns);
+          console.log(dataReporte);
+
+      } catch (exc) {
+          console.log("ucmycustoms_report", "ppal", exc);
+      }
+
+  }
+
+  app.AfterLoadMyCustom = function (response, lan, filters,) {
+      try {
+          return LoadMyCustoms(response, lan, filters);
+
+      } catch (exc) {
+          app.excManager("ucmycustoms_report", "AfterLoad", exc);
+      }
+  }
+</script>
+
+

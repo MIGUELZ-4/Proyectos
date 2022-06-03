@@ -1,0 +1,156 @@
+<style>
+    .ar_green{
+        color:#00ff21;
+    }
+</style>
+
+<script type="text/javascript">
+    /*-----------------------------------------------
+    - Execute here the custom actions on the file, like to get totals,
+    - complete some fields, apply design, etc.
+    ------------------------------------------------*/
+
+
+
+    function LoadMyCustoms(response, lan, filters) {
+        try {
+
+            var data_ = [];
+
+            console.log("data general",response);
+            var columns = [];
+            columns = response[0].columns;
+            $.each(response[0].columns, function (j, col) {
+
+                col["title"] = col.lab;
+                col["width"]= 200;
+
+
+            });
+
+            /*
+            colums = _.reject(columns, function (obj) {
+                return  obj.field === "MarkerID";
+            });
+            */
+
+            console.log("columns",columns);
+
+            /*
+              definir columnas customs
+              var columns = [
+                            //    { field: "MarkerID", title: "MarkerID", width: 200 },
+                            { field: "it1", title: "ACTIVIDAD", width: 200 },
+                            { field: "it2", title: "FECHA", width: 200 },
+                            { field: "it3", title: "TIPO DE MOVIMIENTO", width: 200 },
+                            { field: "it4", title: "HORA", width: 200 },
+                            { field: "it5", title: "HABITACION", width: 200 },
+                            { field: "it6", title: "AISLAMIENTO", width: 200 },
+                            { field: "tarea", title: "TAREA", width: 200 },
+                            { field: "it7", title: "CREA LA SOLICITUD", width: 200 },
+                            { field: "it8", title: "OPERARIO ASIGNADO", width: 400 },
+                            { field: "it15", title: "AUDITOR", width: 400 },
+                            { field: "it9", title: "HORA INICIO", width: 400 },
+                            { field: "it10", title: "HORA FINALIZACION", width: 500 },
+                            { field: "it11", title: "TIEMPO DE TOMA DEL SERVICIO (minutos) ", width: 500 },
+                            { field: "it12", title: "TIEMPO ASEO Y DESINFECCIÓN (minutos) ", width: 500 },
+                            { field: "it13", title: "TIEMPO TOTAL DEL SERVICIO(minutos)", width: 500 },
+                            { field: "it14", title: "MOTIVO DE LA DEMORA", width: 200 },
+                        ];
+
+            */
+
+
+            //organizacion de la data
+            
+            $.each(response[].data, function (j, dat) {
+
+                if (dat.act_fecha != '') {
+                    data_.push(dat);
+
+                }
+
+
+            });
+            
+
+            console.log(data_)
+
+            //procesamiento de la data
+
+            /*
+            $.each(data_, function (i, dat) {
+                array.push({
+                    MarkerID: dat.MarkerID,
+                    act_fecha: dat.act_fecha,
+                    it3: dat.act_tipomovimiento,
+                    it4: dat.act_hora,
+                    it6: dat.act_tipo_aislamiento,
+                    it7: dat.act_nombre_quien_solicita,
+                    it8: dat.operario,
+                    it9: inicio,
+                    it10: fin,
+                    it11: dur,
+                    it12: desinfeccion,
+                    it13: total,
+                    it14: dat.act_motivo_demora,
+                    it15: dat.supervisor
+                })
+
+            });
+            */
+
+            //quitamos los campos undefined de la data general
+            
+            var newdata = [];
+            $.each(data_, function (j, dat) {
+                var objdata1 = {};
+                $.each(columns, function (l, col) {
+                    var value = " ";
+                    switch (col.field) {
+                        default:
+                            value = typeof (dat[col.field]) != 'undefined' ? dat[col.field] : "";
+                            break;
+                    }
+                    objdata1[col.field] = value;
+
+                });
+                if (objdata1 != {})
+                    newdata.push(objdata1);
+            });
+            
+           // console.log("-->",newdata);
+            //OBJECTO QUE SE DEBE ENVIAR SIEMPRE AL REPORTE PARA QUE LO MUESTE EN LA GRID
+            // *** OJO IMPORTANTE SOLO SE GENERA UN EXCEL DE UNA PAGINA.
+
+            //template de salida 
+            var result = {
+                data: newdata,
+                columns: columns,
+                rowtemplate: '<tr>' +
+                    '<td>#:act_fecha #</td>' +
+                    '<td>#:loc_name #</td>' +
+                    '<td>#:md_elementos_seguridad_type #</td>' +
+                    '<td>#:md_elementos_seguridad_name #</td>' +
+                    '<td>#:md_elementos_seguridad_cantidad_real #</td>' +
+                    '<td>#:act_com_recomend #</td>' +
+                    '<td>#:act_fpersonal1 #</td>' +
+                    '<td>#:ct_fpersonal2 #</td>' +
+                    '</tr>'
+            };
+            return result;
+
+        } catch (exc) {
+            console.log("ucmycustoms_report", "ppal", exc);
+        }
+
+    }
+    app.AfterLoadMyCustom = function (response, lan, filters,) {
+        try {
+            return LoadMyCustoms(response, lan, filters);
+
+        } catch (exc) {
+            app.excManager("ucmycustoms_report", "AfterLoad", exc);
+        }
+    }
+</script>

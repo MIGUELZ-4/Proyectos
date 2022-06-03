@@ -1,0 +1,455 @@
+<style>
+    .container {
+        width: 100%;
+        margin: 20px 0;
+        padding: 10px;
+        font-size: 6px;
+    }
+
+    .texto {
+        text-align: center;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    .t {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .none {
+        padding: 0px !important;
+        border: 0px !important;
+    }
+
+    .t td,
+    .t th {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+  
+  .salto {
+    page-break-inside: avoid;
+  }
+    th,
+    td {
+        padding: 5px;
+
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .vt_signature {
+        width: 100px;
+        height: 100px;
+    }
+</style>
+
+<body>
+    <div class="container">
+
+        <table class="t">
+
+            <thead>
+              
+              <tr>
+                <td style="border: 0px; padding: 20px 0;"></td>
+              </tr>
+
+                <tr>
+                    <td class="none">
+                        <table class="t">
+                            <tr>
+                                <th rowspan="3" colspan="3"> <img
+                                        src="https://s3.amazonaws.com/logocompanies/D31E82BC-8C3F-4610-948D-9D0CB7A1A908.png"
+                                        width="200" />
+                                </th>
+                                <th colspan="20" style="text-align: center;">PROCESO OPERATIVO</th>
+                                <th>Codigo: PO.FR.09</th>
+                            </tr>
+                            <tr>
+                                <th colspan="20" rowspan="2" style="text-align: center;">PLANTILLA DE MONITOREO Y
+                                    CONTROL DE INSECTOS EN
+                                    LÁMPARAS DE LUZ ULTRAVIOLETA</th>
+                                <th>Version: 3 </th>
+                            </tr>
+                            <tr>
+                                <th>Fecha: 0/02/22</th>
+                            </tr>
+                            <tr>
+                                <th colspan="24"><b>Empresa: </b><span data-frm="LocationName"></span></th>
+                            </tr>
+                            <tr>
+                                <th colspan="24"><b>Fecha: </b><span data-frm="CreatedOn"></span></th>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="none">
+                        <table class="t">
+                            
+                            <tr>
+                                <th rowspan="2" class="texto">Numero de Estación</th>
+                                <th rowspan="2" colspan="4">Area de ubicación</th>
+                                <th colspan="4" class="texto">Lunes</th>
+                                <th colspan="4" class="texto">Martes</th>
+                                <th colspan="4" class="texto">Miercoles</th>
+                                <th colspan="4" class="texto">Jueves</th>
+                                <th colspan="4" class="texto">Viernes</th>
+                                <th colspan="4" class="texto">Sabado</th>
+                                <th rowspan="2" class="texto">Observaciones</th>
+                            </tr>
+                            <tr>
+                                <th class="color">Cambio cebo</th>
+                                <th>Consumo</th>
+                                <th>Estado del Cebo</th>
+                                <th>Estado de la Estación</th>
+                                <th class="color">Cambio cebo</th>
+                                <th>Consumo</th>
+                                <th>Estado del Cebo</th>
+                                <th>Estado de la Estación</th>
+                                <th class="color">Cambio cebo</th>
+                                <th>Consumo</th>
+                                <th>Estado del Cebo</th>
+                                <th>Estado de la Estación</th>
+                                <th class="color">Cambio cebo</th>
+                                <th>Consumo</th>
+                                <th>Estado del Cebo</th>
+                                <th>Estado de la Estación</th>
+                                <th class="color">Cambio cebo</th>
+                                <th>Consumo</th>
+                                <th>Estado del Cebo</th>
+                                <th>Estado de la Estación</th>
+                                <th class="color">Cambio cebo</th>
+                                <th>Consumo</th>
+                                <th>Estado del Cebo</th>
+                                <th>Estado de la Estación</th>
+                            </tr>
+                            <tbody id="lista">
+
+                            </tbody>
+
+                        </table>
+
+                        <table style="display:none;" class="t" data-api="MD_ESTACIONES_CEBADO" cellspacing="0">
+
+                            <tbody data-container="true" data-template="true">
+
+                                <tr class="fila">
+                                    <td data-col="NUM-ESTACION" style="text-align: center;"></td>
+                                    <td data-col="Name" style="text-align: center;"></td>
+                                    <td data-col="CAMBIO_L"></td>
+                                    <td data-col="CONSUMO_L"></td>
+                                    <td data-col="ESTADO_CEBO_L"></td>
+                                    <td data-col="ESTADO_ESTACION_L"></td>
+                                    <td data-col="CAMBIO_M"></td>
+                                    <td data-col="CONSUMO_M"></td>
+                                    <td data-col="ESTADO_CEBO__M"></td>
+                                    <td data-col="ESTADO_ESTACION_M"></td>
+                                    <td data-col="CAMBIO_MI"></td>
+                                    <td data-col="CONSUMO_MI"></td>
+                                    <td data-col="ESTADO_CEBO__MI"></td>
+                                    <td data-col="ESTADO_ESTACION_MI"></td>
+                                    <td data-col="CAMBIO_J"></td>
+                                    <td data-col="CONSUMO_J"></td>
+                                    <td data-col="ESTADO_CEBO__J"></td>
+                                    <td data-col="ESTADO_ESTACION_J"></td>
+                                    <td data-col="CAMBIO_V"></td>
+                                    <td data-col="CONSUMO_V"></td>
+                                    <td data-col="ESTADO_CEBO__V"></td>
+                                    <td data-col="ESTADO_ESTACION_V"></td>
+                                    <td data-col="CAMBIO_S"></td>
+                                    <td data-col="CONSUMO_S"></td>
+                                    <td data-col="ESTADO_CEBO__S"></td>
+                                    <td data-col="ESTADO_ESTACION_S"></td>
+                                    <td data-col="OBS"></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+              
+                 <tr>
+                    <td class="none">
+                        <table class="t">
+                            <tr>
+                                <th colspan="30" class="texto">Convenciones: Cambio cebo S:si N:no para consumo
+                                    S:si
+                                    N:no Para
+                                    estado
+                                    del
+                                    Cebo N: normal D:deteriorado F:faltante para el estado de la estación L:limpia
+                                    S:sucia
+                                    DS:desanclada
+                                    FS:fuera de sitio D:deteriorada E:estraviada O:obstruida M:mojada
+                                </th>
+                            </tr>
+                            <tr>
+                                <th colspan="30" class="texto">Resumen de las Condiciones del Cebo y Estado de las
+                                    Estaciónes de
+                                    Control
+                                </th>
+                            </tr>
+                            <tr>
+                                <th colspan="8">N° Estaciónes Monitoreadas: </th>
+                                <th colspan="4"><span id="monitoreo"></span></th>
+                                <th colspan="16">N° Estaciónes Deterioradas: </th>
+                                <th colspan="2"></th>
+                            </tr>
+                            <tr>
+                                <th colspan="8">N° Total de Consumos de Cebos: </th>
+                                <th colspan="4"><span id="NumeroXSI"></span></th>
+                                <th colspan="16">N° Estaciónes Dañadas: </th>
+                                <th colspan="2"></th>
+                            </tr>
+                            <tr>
+                                <th colspan="8">N° Total sin actividad: </th>
+                                <th colspan="4"></th>
+                                <th colspan="16">N° Estaciónes Extraviadas: </th>
+                                <th colspan="2"></th>
+                            </tr>
+                            <tr>
+                                <th colspan="8">N° Total Deteriorado: </th>
+                                <th colspan="4"><span id="NumeroDeteriorada"></span></th>
+                                <th colspan="16">N° Estaciónes Obstruidas: </th>
+                                <th colspan="2"></th>
+                            </tr>
+                            <tr>
+                                <th colspan="13" class="texto"><b>Control del Cebo Rodenticida Aplicado:</b></th>
+                                <th rowspan="2" colspan="17" data-api="FIRMA_CLIENTE.BIN"><b>Técnico Aplicador:
+                                    </b><span data-api="TECNICO_APLICADOR.BIN"></span></th>
+                            </tr>
+                            <tr >
+                                <th class="texto" colspan="4">Nombre Comercial</th>
+                                <th class="texto"colspan="4">Principio Activo</th>
+                                <th class="texto"colspan="4">Método Uso</th>
+                                <th class="texto"colspan="4">Dosis/Estación</th>
+
+
+                            </tr>
+                            <tbody id="lista1">
+
+                            </tbody>
+
+                        </table>
+
+                        <table style="display:none;" class="t" data-api="MD_CONTROL_CEBO" cellspacing="0">
+
+                            <tbody data-container="true" data-template="true">
+
+                                <tr class="fila2">
+                                    <td colspan="4" data-col="NOMBRE_COMERCIAL"></td>
+                                    <td colspan="4" data-col="PRINC_ACTIVO"></td>
+                                    <td colspan="4" data-col="METODO_USO"></td>
+                                    <td colspan="4" data-col="DOSIS"></td>
+                                    <td colspan="17"><b>N° Carnet: </b> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            <tbody>
+        
+    </div>
+
+    <script type="text/javascript">
+        ucCustomReport.AfterLoad = function () {
+            try {
+                var lunesCambioCeboSI = 0;
+                var lunesCambioCeboNo = 0;
+                var martesCambioCeboSI = 0;
+                var martesCambioCeboNo = 0;
+                var miercolesCambioCeboSI = 0;
+                var miercolesCambioCeboNo = 0;
+                var juevesCambioCeboSI = 0;
+                var juevesCambioCeboNo = 0;
+                var viernesCambioCeboSI = 0;
+                var viernesCambioCeboNo = 0;
+                var sabadoCambioCeboSI = 0;
+                var sabadosCambioCeboNo = 0;
+                var lunesConsumoSI = 0;
+                var lunesConsumoNO = 0;
+                var martesConsumoSI = 0;
+                var martesConsumoNO = 0;
+                var miercolesConsumoSI = 0;
+                var miercolesConsumoNO = 0;
+                var juevesConsumoSI = 0;
+                var juevesConsumoNO = 0;
+                var viernesConsumoSI = 0;
+                var viernesConsumoNO = 0;
+                var sabadoConsumoSI = 0;
+                var sabadoConsumoNO = 0;
+                var i = 0;
+                var SinActividad = 0;
+                var lunesSinActividad = 0;
+                var martesSinActividad = 0;
+                var miercolesSinActividad = 0;
+                var juevesSinActividad = 0;
+                var viernesSinActividad = 0;
+                var sabadoSinActividad = 0;
+
+                
+
+                $(".fila").each(function (i, ele) {
+
+                    
+
+                        if ($(ele).children()[2] === "Si") {
+                            lunesCambioCeboSI += 1;
+                        } 
+                        if ($(ele).children()[6] === "Si") {
+                            martesCambioCeboSI += 1;
+                        } 
+                        if ($(ele).children()[10] === "Si") {
+                            miercolesCambioCeboSI += 1;
+                        } 
+                        if ($(ele).children()[14] === "Si") {
+                            juevesCambioCeboSI += 1;
+                        } 
+                        if ($(ele).children()[18] === "Si") {
+                            viernesCambioCeboSI += 1;
+                        } 
+                        if ($(ele).children()[22] === "Si") {
+                            sabadoCambioCeboSI += 1;
+                        } 
+
+                        if ($(ele).children()[2,3] === "No" ){
+                            lunesSinActividad += 1;
+                        }
+                        if ($(ele).children()[6,7] === "No" ){
+                            martesSinActividad += 1;
+                        }
+                        if ($(ele).children()[10,11] === "No" ){
+                            miercolesSinActividad += 1;
+                        }
+                        if ($(ele).children()[14,15] === "No" ){
+                            juevesSinActividad += 1;
+                        }
+                        if ($(ele).children()[18,19] === "No" ){
+                            viernesSinActividad += 1;
+                        }
+                        if ($(ele).children()[22,23] === "No" ){
+                            sabadoSinActividad += 1;
+                        }
+                    
+
+
+
+
+                        // if ($(ele).children()[3] === "Si") {
+                        //     lunesConsumoSI += 1;
+                        // } else if ($(ele).children()[3] === "No") {
+                        //     lunesConsumoNO += 1;
+                        // }
+                        // if ($(ele).children()[3] === "Si") {
+                        //     martesConsumoSI += 1;
+                        // } else if ($(ele).children()[3] === "No") {
+                        //     martesConsumoNO += 1;
+                        // }
+                        // if ($(ele).children()[3] === "Si") {
+                        //     miercolesConsumoSI += 1;
+                        // } else if ($(ele).children()[3] === "No") {
+                        //     miercolesConsumoNO += 1;
+                        // }
+                        // if ($(ele).children()[3] === "Si") {
+                        //     juevesConsumoSI += 1;
+                        // } else if ($(ele).children()[3] === "oO") {
+                        //     juevesConsumoNO += 1;
+                        // }
+                        // if ($(ele).children()[3] === "Si") {
+                        //     viernesConsumoSI += 1;
+                        // } else if ($(ele).children()[3] === "No") {
+                        //     viernesConsumoSI += 1;
+                        // }
+                        // if ($(ele).children()[3] === "Si") {
+                        //     sabadoConsumoSI += 1;
+                        // } else if ($(ele).children()[3] === "No") {
+                        //     sabadoConsumoSI += 1;
+                        // }
+
+                        console.log(ele)
+
+                        var html = ' <tr class="salto"><td class="center">' + (i + 1) +
+                            '</td><td class="center" colspan="4">' + $(ele).children()[1].textContent +
+                            '</td><td class="center">' + $(ele).children()[2].textContent +
+                            '</td><td class="center">' + $(ele).children()[3].textContent +
+                            '</td><td class="center">' + $(ele).children()[4].textContent +
+                            '</td><td class="center">' + $(ele).children()[5].textContent +
+                            '</td><td class="center">' + $(ele).children()[6].textContent +
+                            '</td><td class="center">' + $(ele).children()[7].textContent +
+                            '</td><td class="center">' + $(ele).children()[8].textContent +
+                            '</td><td class="center">' + $(ele).children()[9].textContent +
+                            '</td><td class="center">' + $(ele).children()[10].textContent +
+                            '</td><td class="center">' + $(ele).children()[11].textContent +
+                            '</td><td class="center">' + $(ele).children()[12].textContent +
+                            '</td><td class="center">' + $(ele).children()[13].textContent +
+                            '</td><td class="center">' + $(ele).children()[14].textContent +
+                            '</td><td class="center">' + $(ele).children()[15].textContent +
+                            '</td><td class="center">' + $(ele).children()[16].textContent +
+                            '</td><td class="center">' + $(ele).children()[17].textContent +
+                            '</td><td class="center">' + $(ele).children()[18].textContent +
+                            '</td><td class="center">' + $(ele).children()[19].textContent +
+                            '</td><td class="center">' + $(ele).children()[20].textContent +
+                            '</td><td class="center">' + $(ele).children()[21].textContent +
+                            '</td><td class="center">' + $(ele).children()[22].textContent +
+                            '</td><td class="center">' + $(ele).children()[23].textContent +
+                            '</td><td class="center">' + $(ele).children()[24].textContent +
+                            '</td><td class="center">' + $(ele).children()[25].textContent +
+                            '</td><td class="center" colspan="4">' + $(ele).children()[26].textContent +
+                            '</td> </tr>';
+
+                        $("#lista").append(html);
+
+                });
+
+                var totalSI = lunesCambioCeboSI + martesCambioCeboSI + miercolesCambioCeboSI + juevesCambioCeboSI + viernesCambioCeboSI + sabadoCambioCeboSI;
+                var totalEstacion = lunesSinActividad + martesSinActividad + miercolesSinActividad + juevesSinActividad + viernesSinActividad + sabadoSinActividad;
+                
+                // var total2SI = lunesConsumoSI + martesConsumoSI + miercolesConsumoSI + jueveConsumosSI + viernesConsumoSI + sabadoConsumoSI;
+                // var total2NO = lunesConsumoNO + martesConsumoNO + miercolesConsumoNO + jueveConsumosNO + viernesConsumoNO + sabadoConsumoNO;
+
+                $("#NumeroXSI").html(1);
+                // $("#NumeroXNO").html(1);
+                $("#monitoreo").html(30)
+                $("#NumeroDeteriorada").html(29)
+
+                
+
+                $(".fila2").each(function (x, elem) {
+
+                    console.log(elem)
+
+
+                    var html = ' <tr><td class="center" colspan="4">' + $(elem).children()[0].textContent +
+                        '</td><td class="center" colspan="4">' + $(elem).children()[1].textContent +
+                        '</td><td class="center" colspan="4">' + $(elem).children()[2].textContent +
+                        '</td><td class="center" colspan="4">' + $(elem).children()[3].textContent +
+                        '</td><td colspan="17">' + $(elem).children()[4].textContent +
+                        '</td> </tr>';
+
+
+                    $("#lista1").append(html);
+
+                });
+
+
+            } catch (exc) {
+                app.excManager("ucCustomReport", "AfterLoad", exc);
+            }
+
+        }
+    </script>
+    </bodyh

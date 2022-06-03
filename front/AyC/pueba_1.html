@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <style>
+        .container {
+            padding-left: 30px;
+            margin: 30px;
+            width: 100%;
+        }
+        .contenedor{
+          width: 30px;
+          height: 70px;
+
+        }
+        .imag{
+            width: 5%;
+        }
+        body{
+          font-size: 16px;
+        }
+        
+        .margen {
+            width: 100%;
+            width: 100%;
+            margin-left: 40px;
+            margin-right: 20px;
+        }
+
+        .parrafo {
+            text-align: justify;
+        }
+
+        table{
+          width: 90%;
+        }
+        .tr_med{
+          text-align: left; 
+          padding: 10px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .letragrande {
+            font-size: 18px;
+        }
+
+        .salto {
+          page-break-inside: avoid;
+        }
+        .color{
+          color: red;
+        }
+        .color1{
+          color: rgb(26, 112, 165);
+        }
+    </style>
+</head>
+<body><body>
+  <div class="container salto">
+    <table>
+      <thead>
+        <tr>
+          <th class="bordeTabla"><img id="urlLogo"  width="200"></th>
+          <th style="height: 3%; width: 90%;"><h2 class="color">Confidencial<h2>
+          <h2>ESTUDIOS DE CONFIABILIDAD DE PERSONAS</h2><br><h3>Gestionamos factores de riesgo en la contratación a través de la identificación de estos,  para minimizar la exposición de sus recursos empresariales.</h3></th>
+        </tr>
+        <tr>
+          <th rowspan="2" colspan="2"><p>Las actividades de identificación de factores de riesgo realizadas dentro del proceso cuentan con la autorización expresa del aspirante
+
+            al cargo, previa explicación de la política de protección de datos; el uso, manejo y custodia de la información serán de carácter
+            
+            exclusivo de la empresa cliente para sus procesos de selección y toda la información y los datos que ANTICIPACION Y CONTROL le
+            
+            suministra deberán ser tratados de acuerdo con su política de protección de datos</p></th>
+        </tr>
+      </thead>
+    </table>
+    <br>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2"><h2>DATOS DE LA PERSONA</h2></th>
+        </tr>
+        <tr>
+          <td class="contenedor"><span id="imagen"></span></td>
+          <td style=" text-align: left; padding: 10px;"><b>Cargo aspiración: </b><span id="CARGOQUEASPIRA"></span><br><br>
+              Nombre: <span id="Nombre"></span><br>
+              Identificación: <span id="identificacion"></span><br>
+              Lugar y fecha de Nacimiento: </span> <span id="FechadeNacimiento"> </span><br>
+              Edad: <span id="Edad">Años</span><br>
+              Estado Civil: <span id="EstadoCivil"></span><br>
+              Pasaporte: <span id="PASAPORTE"></span><br>
+              Libreta: <span id="LIBRETAMILITAR"></span><br>
+              Licencia Conducción: <span id="LicenciaConduccion"></span><br>
+              Medio de Transporte: <span id="MediodeTransporte"></span><br>
+          </td>
+          
+        </tr>
+      </thead>
+    </table>
+    <br>
+    <table>
+      <thead>
+        <tr>
+          <th><img src="https://visitrack-files.s3.us-east-2.amazonaws.com/archivos/AYC/Imagen2.jpg" width="100"><span id="DirecciondelaResidencia"></span><br><span id="Lugar"></span><span id="ciudad"></span></th>
+          <th><img src="https://visitrack-files.s3.us-east-2.amazonaws.com/archivos/AYC/Imagen3.jpg" width="100"><span id="Correoelectronico"></span></th>
+        </tr>
+        <tr>
+          <th><img src="https://visitrack-files.s3.us-east-2.amazonaws.com/archivos/AYC/Imagen4.jpg" width="100"><span id="Celular"></span></th>
+          <th><img src="https://visitrack-files.s3.us-east-2.amazonaws.com/archivos/AYC/Imagen5.jpg" width="100"><span id="Telefono"></span></th>
+        </tr>
+      </thead>
+    </table>
+    <br>
+    <br>
+    <br>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2"><h2 class="color">IDENTIFICACION DE FACTORES</h2></th>
+        </tr>
+        <tr>
+          <th style="height: 40px;">Habitacional<img src="https://visitrack-files.s3.us-east-2.amazonaws.com/archivos/AYC/Imagen1.jpg"></th>
+          <th style="width: 100%;"><h2 class="color">Factor de Riesgo <h2><br><h2>Presencia e influencia de actores al margen de la ley en el entorno</h2><br><span id="Presenciaeinfluencia"></span></th>
+        </tr>
+        <tr>
+          <th style="height: 40px;">Familiar<img src="https://visitrack-files.s3.us-east-2.amazonaws.com/archivos/AYC/Imagen6.jpg"></th>
+          <th style="width: 100%;"><h2>Dinámica y estabilidad del grupo familiar</h2><br><span id="Dinámicayestabilidaddelgrupofamiliar"></span></th>
+        </tr>
+        <tr>
+          <th style="height: 40px;">Social<img src="https://visitrack-files.s3.us-east-2.amazonaws.com/archivos/AYC/Imagen7.jpg"></th>
+          <th style="width: 100%;"><h2>Grupos de relacionamiento</h2><br><span id="Gruposderelacionamiento"></span></th>
+        </tr>
+      </thead>
+    </table>
+    <br>
+    <br>
+    <br>
+    <table>
+      <thead>
+        <tr>
+          <th style="height: 50%;">Económico per cápita <br><img src="https://visitrack-files.s3.us-east-2.amazonaws.com/archivos/AYC/Imagen8.jpg"></th>
+          <th style="width: 100%; height: 50%;"><h2>Información financiera / nivel de endeudamiento</h2><table style="margin: 30px;">
+                                                                <thead>
+                                                                  <tr>
+                                                                    <th>Ingresos Directo</th>
+                                                                    <th>Ingresos Indirectos</th>
+                                                                    <th>Egresos</th>
+                                                                    <th>Endeudamiento</th>
+                                                                    <th>Capacidad de Ahorro</th>
+                                                                  </tr>
+                                                                  <tr>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                    <th></th>
+                                                                  </tr>
+                                                                </thead>
+                                                             </table></th>
+        </tr>
+        <tr>
+          <th>Formación<br><img src="https://visitrack-files.s3.us-east-2.amazonaws.com/archivos/AYC/Imagen9.jpg"></th>
+          <th><h2>Validación de información educativa y formación superior</h2><table style="margin: 30px;">
+                                                                          <thead>
+                                                                            <tr>
+                                                                              <th>Titulo obtenido / año</th>
+                                                                              <th>Institución</th>
+                                                                              <th>Medio de verificación</th>
+                                                                              <th>Confirmación</th>
+                                                                            </tr>
+                                                                            <tr>
+                                                                              <th></th>
+                                                                              <th></th>
+                                                                              <th></th>
+                                                                              <th></th>
+                                                                            </tr>
+                                                                          </thead>
+                                                                        </table></th>
+        </tr>
+      </thead>
+    </table>
+    <br>
+    <br>
+    <br>
+    <table>
+      <thead>
+        <tr>
+          <th>Laboral<br><img src="https://visitrack-files.s3.us-east-2.amazonaws.com/archivos/AYC/Imagen10.jpg"></th>
+          <th style="width: 100%;"><h2>Información laboral y tiempos de inactividad </h2><table style="margin: 30px;">
+                                                                      <thead>
+                                                                        <tr>
+                                                                          <th>Empresa</th>
+                                                                          <th>Cargo desempeñado</th>
+                                                                          <th>Tiempo laborado</th>
+                                                                          <th>Nombre y cargo de quien confirma</th>
+                                                                        </tr>
+                                                                        <tr>
+                                                                          <th</th>
+                                                                          <th></th>
+                                                                          <th></th>
+                                                                          <th></th>
+                                                                        </tr>
+                                                                      </thead>
+                                                                    </table></th>
+        </tr>
+        <tr>
+          <th>Antecedentes personale<img src="https://visitrack-files.s3.us-east-2.amazonaws.com/archivos/AYC/Imagen11.jpg"></th>
+          <th><h2>Informaciones antecedentes y listas restrictivas</h2><table style="margin: 30px;">
+                                                                  <thead>
+                                                                    <tr>
+                                                                      <th style=" text-align: left;">Nombre Candidato(a): </th>
+                                                                      <th colspan="2"><span id="Nombre1"></span></th>
+                                                                    </tr>
+                                                                    <tr>
+                                                                      <td style=" text-align: left;">Identificación: </td>
+                                                                      <th colspan="2"><span id="identificacion1"></span></th>
+                                                                    </tr>
+                                                                    <tr>
+                                                                      <th style=" text-align: left;">CONSULTA</th>
+                                                                      <th style=" text-align: left;">OBSERVACIÓN</th>
+                                                                      <th style=" text-align: left;">HALLAZGO</th>
+                                                                    </tr>
+                                                                    <tr>
+                                                                      <th style=" text-align: left;">Comparendos</th>
+                                                                      <th></th>
+                                                                      <th></th>
+                                                                    </tr>
+                                                                    <tr>
+                                                                      <th style=" text-align: left;">Lavado de Activos</th>
+                                                                      <th></th>
+                                                                      <th></th>
+                                                                    </tr>
+                                                                    <tr>
+                                                                      <th style=" text-align: left;">Antecedentes Disciplinarios, contractuales, fiscales entre otros.</th>
+                                                                      <th></th>
+                                                                      <th></th>
+                                                                    </tr>
+                                                                    <tr>
+                                                                      <th style=" text-align: left;">Procesos Ley 600 de 200</th>
+                                                                      <th></th>
+                                                                      <th></th>
+                                                                    </tr>
+                                                                    <tr>
+                                                                      <th style=" text-align: left;">Procesos Ley 906 de 2004</th>
+                                                                      <th colspan="2"></th>
+                                                                    </tr>
+                                                                  </thead>
+                                                                </table></th> 
+        </tr>
+      </thead>
+    </table>
+    <br>
+    <br>
+    <br>
+    <table>
+      <thead>
+        <tr>
+          <th style="height: 500%;">Médico<br><img src="https://visitrack-files.s3.us-east-2.amazonaws.com/archivos/AYC/Imagen12.jpg"></th>
+          <th style="width: 100%;"><table style="margin: 30px;">
+                                    <thead>
+                                      <tr>
+                                        <th class="tr_med color1">Número Noticia:</th>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <th class="tr_med color1">Ley De Aplicabilidad:</th>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <th class="tr_med color1">Procedimiento Abreviado:</th>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <th class="tr_med color1">Tipo Noticia:</th>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <th class="tr_med color1">Documento:</th>
+                                        <td>CEDULA DE CIUDADANIA <span id="identificacion2"></span></td>
+                                      </tr>
+                                      <tr>
+                                        <th class="tr_med color1">Nombre:</th>
+                                        <td><span id="Nombre4"></span></td>
+                                      </tr>
+                                      <tr>
+                                        <th class="tr_med color1">Calidad:</th>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <th class="tr_med color1">Delito:</th>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <th class="tr_med color1">Fecha De Los Hechos:</th>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <th class="tr_med color1">Seccional Fiscalia:</th>
+                                        <td></thd
+                                      </tr>
+                                      <tr>
+                                        <th class="tr_med color1">Unidad Fiscalía:</th>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <th class="tr_med color1">Despacho: </th>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <th class="tr_med color1">Estado De La Asignación: </th>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <th class="tr_med color1">Estado Del Caso: </th>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <th class="tr_med color1">Etapa Del Caso: </th>
+                                        <td></td>
+                                      </tr>
+                                    </thead>
+                                 </table>
+                                 <h2>Información Estado de Salud</h2> 
+        </tr>
+      </thead>
+    </table>
+    <br>
+    <br>
+    <br>
+    <table>
+      <thead>
+        <tr>
+          <th>Activos<br><img src="https://visitrack-files.s3.us-east-2.amazonaws.com/archivos/AYC/Imagen13.jpg"></th>
+          <th style="width: 100%;"><h2>Información de activos</h2></th>
+        </tr>
+      </thead>
+    </table>
+    <br>
+    <br>
+    <br>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2"><h2 class="color">REGISTRO DEL GRUPO FAMILIAR Y VIVIENDA</h2></th>
+        </tr>
+        <tr>
+          <th><img src="https://visitrack-files.s3.us-east-2.amazonaws.com/archivos/AYC/Imagen14.jpg"><br></th>
+          <th style="width: 100%;"><spa id="FOTOGRAFIAGRUPOFAMILIAR"></span></th>
+          
+        </tr>
+      </thead>
+    </table>
+    <br>
+    <table >
+      <tr>
+        <th colspan="3">EVALUACIÓN DE LOS FACTORES DE RIESGO RELACIONADOS CON LA CANDIDATA</th>
+      </tr>
+      <tr>
+        <td colspan="3" style="text-align: center ;">Los factores de riesgo (FR) inherentes a <span id="Nombre2"></span>, identificados y documentados en el cuadro de Investigación de Hallazgos, son los siguientes:</td>
+      </tr>
+      <tr>
+        <td>FR1:	Presencia e Influencia de Actores Ilegales. 
+        <td colspan="2">FR7:	Validación Comisión de Delitos.</td>
+      </tr>
+      <tr>
+        <td>FR2:	Dinámica y Estabilidad del Grupo Familiar.</td>
+        <td colspan="2">FR8:	Estado de Salud.</td>
+      </tr>	
+      <tr>
+        <td>FR3:	Grupos de Relacionamiento.</td>
+        <td colspan="2">FR9:	Adquisición de Bienes Muebles e Inmuebles.</td>
+      </tr>
+      <tr>
+        <td>FR4:	Brechas Financieras y Nivel de Endeudamiento.</td>
+        <td colspan="2">FR10:	Puntualidad.</td>
+      </tr>
+      <tr>
+        <td>FR5:	Validez Acreditaciones.</td>
+        <td colspan="2">FR11:	Calidad de Vida.</td>
+      </tr>
+      <tr>
+        <td>FR6:	Validez Experiencia Laboral y Soporte Tiempos de Inactividad.</td>
+        <td colspan="2">FR12:	Otros.</td>
+      </tr>
+      <tr>
+        <td colspan="3" style="text-align: center ;"><h3>Estos factores de riesgo (FR) inherentes a <span id="Nombre3"></span> se califican con base en la siguiente escala relativa y teniendo en cuenta la documentación entregada en el cuadro de Identificación de Factores de Riesgo y la experticia del evaluador:</h3></td>
+      </tr>
+      <tr>
+        <th>Calificación</th>
+        <th>Rango</th>
+        <th>Criterio</th>
+      </tr>
+      <tr>
+        <th>Alto:</th>
+        <th>1</th>
+        <th>Factor de Riesgo con antecedentes declarados y que se considera un impedimento para desempeñar el cargo.</th>
+      </tr>
+      <tr>
+        <th>Medio-Alto:</th>
+        <th>2</th>
+        <th>Factor de Riesgo con antecedentes declarados y que podría representar un impedimento para desempeñar el cargo.</th>
+      </tr>
+      <tr>
+        <th>Medio:</th>
+        <th>3</th>
+        <th>Factor de Riesgo sin antecedentes declarados, pero presenta evidencia o sospecha de materialización que podría representar un impedimento para desempeñar el cargo.
+          También se debe calificar en este rango aquel FR sin información suficiente para determinar su posible materialización.
+          </th>
+      </tr>
+      <tr>
+        <th>Medio-Bajo:</th>
+        <th>4</th>
+        <th>Factor de Riesgo sin antecedentes declarados, pero que presenta evidencia o sospecha de materialización, aunque no se considera un impedimento para desempeñar el cargo.</th>
+      </tr>
+      <tr>
+        <th>Bajo:</th>
+        <th>5</th>
+        <th>Factor de Riesgo sin antecedentes declarados y sin evidencia de materialización.</th>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th>El gráfico de líneas de los factores de riesgo inherentes a <span id="Nombre5"></span> es:</th>
+      </tr>
+      <tr>
+        <td>
+
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+<p id="demo"></p>
+<!--no modificar solo reubicar-->
+<a href="#" id="print-button" onclick="window.print();return false">PDF</a>
+<script>
+//no tocar segmento
+var fechaInicioReport = [fechaInicio_param] ;
+var fechaFinReport = [fechaFin_param];
+var objectDataConfig = [data];
+var urlLogo = [data_logo];
+var identificacion = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['No.'].map['valor'];
+var identificacion1 = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['No.'].map['valor'];
+var identificacion2 = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['No.'].map['valor'];
+var imagen = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['Imagen'].map['valor'];
+var CARGOQUEASPIRA = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['CARGO QUE ASPIRA:'].map['valor'];
+var Telefono = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['Teléfono: '].map['valor'];
+var Correoelectronico= objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['Correo electronico'].map['valor'];
+var ciudad = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['ciudad'].map['valor'];
+var DirecciondelaResidencia = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['Dirección de la Residencia: '].map['valor'];
+var Lugar = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['Lugar: '].map['valor'];
+var Gruposderelacionamiento = objectDataConfig['ESTUDIOS DE CONFIABILIDAD DE PERSONAS'][0].map['Grupos de relacionamiento '].map['valor'];
+// var Familiar = objectDataConfig[0]['ESTUDIOS DE CONFIABILIDAD DE PERSONAS'][0].map['Familiar'].map['valor'];
+var Nombre = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['Nombre:'].map['valor'];
+var Nombre1 = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['Nombre:'].map['valor'];
+var Nombre2 = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['Nombre:'].map['valor'];
+var Nombre3 = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['Nombre:'].map['valor'];
+var Nombre4 = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['Nombre:'].map['valor'];
+var Nombre5 = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['Nombre:'].map['valor'];
+var Edad = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['Edad:'].map['valor'];
+var EstadoCivil  = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['Estado Civil: '].map['valor'];
+var PASAPORTE  = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['PASAPORTE'].map['valor'];
+var MediodeTransporte  = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['Medio de Transporte'].map['valor'];
+var LIBRETAMILITAR  = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['LIBRETA MILITAR'].map['valor'];
+var LicenciaConduccion  = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['Licencia Conducción: '].map['valor'];
+var FechadeNacimiento  = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['Fecha de Nacimiento:'].map['valor'];
+var Celular  = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['Celular:'].map['valor'];
+var FOTOGRAFIAGRUPOFAMILIAR  = objectDataConfig['ESTUDIO DE CONFIABILIDAD -  RECOLECCIÓN'][0].map['FOTOGRAFIA GRUPO FAMILIAR'].map['valor'];
+var Dinámicayestabilidaddelgrupofamiliar  = objectDataConfig['ESTUDIOS DE CONFIABILIDAD DE PERSONAS'][0].map['Dinámica y estabilidad del grupo familiar'].map['valor'];
+var Presenciaeinfluencia  = objectDataConfig['ESTUDIOS DE CONFIABILIDAD DE PERSONAS'][0].map['Presencia e influencia de actores al margen de la ley en el entorno'].map['valor'];
+
+//fin no tocar segmento
+document.getElementById("demo").innerHTML = fechaInicioReport;
+document.getElementById("urlLogo").src = urlLogo;
+document.getElementById("identificacion").innerHTML = identificacion;
+document.getElementById("identificacion1").innerHTML = identificacion1;
+document.getElementById("identificacion2").innerHTML = identificacion2;
+document.getElementById("imagen").innerHTML = '<img src="'+imagen+'">';
+document.getElementById("CARGOQUEASPIRA").innerHTML = CARGOQUEASPIRA;
+document.getElementById("Telefono").innerHTML = Telefono;
+document.getElementById("Correoelectronico").innerHTML = Correoelectronico;
+document.getElementById("DirecciondelaResidencia").innerHTML = DirecciondelaResidencia;
+document.getElementById("ciudad").innerHTML = ciudad;
+document.getElementById("Lugar").innerHTML = Lugar;
+document.getElementById("Gruposderelacionamiento").innerHTML = Gruposderelacionamiento;
+// document.getElementById("Familiar").innerHTML = Familiar;
+document.getElementById("Nombre").innerHTML = Nombre;
+document.getElementById("Nombre1").innerHTML = Nombre1;
+document.getElementById("Nombre2").innerHTML = Nombre2;
+document.getElementById("Nombre3").innerHTML = Nombre3;
+document.getElementById("Nombre4").innerHTML = Nombre4;
+document.getElementById("Nombre5").innerHTML = Nombre5;
+document.getElementById("Edad").innerHTML = Edad;
+document.getElementById("EstadoCivil").innerHTML = EstadoCivil;
+document.getElementById("PASAPORTE").innerHTML = PASAPORTE;
+document.getElementById("MediodeTransporte").innerHTML = MediodeTransporte;
+document.getElementById("LIBRETAMILITAR").innerHTML = LIBRETAMILITAR;
+document.getElementById("LicenciaConduccion").innerHTML = LicenciaConduccion;
+document.getElementById("FechadeNacimiento").innerHTML = FechadeNacimiento;
+document.getElementById("Celular").innerHTML = Celular;
+document.getElementById("FOTOGRAFIAGRUPOFAMILIAR").innerHTML = '<img src="'+FOTOGRAFIAGRUPOFAMILIAR+'">';
+document.getElementById("Dinámicayestabilidaddelgrupofamiliar").innerHTML = Dinámicayestabilidaddelgrupofamiliar;
+document.getElementById("Presenciaeinfluencia").innerHTML = Presenciaeinfluencia;
+
+</script>
+</body>
+</html>
